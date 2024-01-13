@@ -77,23 +77,6 @@ html, body {
 }
 
 .buttons{
-  /* background: none !important;
-	border: none;
-	padding: 0 !important;
-	margin: 0 !important;
-	line-height: initial !important;
-	width: auto !important;
-	font-weight: normal !important;
-	height: auto !important;
-	border-radius: 0 !important;
-	overflow: initial;
-	font-size: 30rpx;
-	border-left: 1rpx solid #b3b3b3;
-	width: 112rpx;
-	padding-left: 20rpx !important;
-	height: 38rpx;
-	color: #A9CD39 */
-
   margin: 20px;
   width: 130px;
   height: 40px;
