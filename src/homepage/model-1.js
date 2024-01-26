@@ -49,6 +49,7 @@ loader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/47b05e
         model.traverse( child => child.material = bakedMaterial )
         scene.add(model)
 		scene.position.set(0,.2,0)
+        model.scale.set(0.8, 0.8, 0.8)
     },
     ( xhr ) => {
 		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' )

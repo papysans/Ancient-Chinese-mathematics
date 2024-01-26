@@ -4,8 +4,8 @@
   font-family: 'Lato', sans-serif;
   letter-spacing: 5px;
   font-size:24px;
-  font-weight: 300;
-  color: #333333;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.804)
 }
 
 .flex-p { /*Flexbox for containers*/
@@ -22,14 +22,21 @@
   margin-bottom:-7px; /*Fix for safari gap*/
   min-height:100px;
   max-height:150px;
-  z-index: index 1;
+  z-index:1;
+  color: #ffffffcd;
 }
 
 .content {
-  position:relative;
-  height:10vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height:0;
   text-align:center;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(55, 55, 55, 0);
+  z-index: 2;
+  bottom: 45px;
 }
 
 

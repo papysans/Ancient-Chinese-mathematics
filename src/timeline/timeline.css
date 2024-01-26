@@ -117,9 +117,9 @@
   width: 100%;
   position: relative;
   padding: 80px 0;
-  transition: 0.3s ease 0s;
+  transition: 1s ease 0s;
   background-attachment: fixed;
-  background-size: cover;
+  background-size:cover;
 }
 .timeline-container:before {
   position: absolute;
