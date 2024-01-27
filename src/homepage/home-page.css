@@ -84,7 +84,8 @@ html, body {
 
 body {
   overflow: hidden;
-  background-color: #3f3f3f;
+  /* background-color: #3f3f3f; */
+  background-image: url(../../image/bg.jpg);
   cursor: grab;
 }
 

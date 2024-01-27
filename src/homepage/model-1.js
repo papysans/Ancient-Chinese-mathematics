@@ -8,7 +8,7 @@ const sizes = {
 
 // Base camera
 const camera = new THREE.PerspectiveCamera(10, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 8
+camera.position.x = 12
 camera.position.y = 4
 camera.position.z = 15
 scene.add(camera)
@@ -34,25 +34,23 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 
-// Materials
-const bakedTexture = textureLoader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/47b05e2db4e49eec33d63729e920894a906cb693/static/baked.jpg')
-bakedTexture.flipY = false
-bakedTexture.encoding = THREE.sRGBEncoding
+// // Materials
+// const bakedTexture = textureLoader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/47b05e2db4e49eec33d63729e920894a906cb693/static/baked.jpg')
+// bakedTexture.flipY = false
+// bakedTexture.encoding = THREE.sRGBEncoding
 
-const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
+// const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
 //Loader
-const loader = new THREE.GLTFLoader()
-loader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/47b05e2db4e49eec33d63729e920894a906cb693/static/model.glb',
-    (gltf) => {
+const loader = new THREE.GLTFLoader().setPath('../../model/');
+loader.load('scene.gltf', function (gltf)  {
         const model = gltf.scene
-        model.traverse( child => child.material = bakedMaterial )
+        // model.traverse( child => child.material = bakedMaterial )
         scene.add(model)
-		scene.position.set(0,.2,0)
-        model.scale.set(0.8, 0.8, 0.8)
-    },
-    ( xhr ) => {
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' )
+		scene.position.set(0,0,0)
+        model.scale.set(20, 20, 20)
+        const light = new THREE.AmbientLight( 0x404040, 2.5 ); // 柔和的白光
+        scene.add( light );
     }
 )
 
