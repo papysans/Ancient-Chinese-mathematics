@@ -16,6 +16,7 @@
     top: 10px;
     right: 0;
     margin: auto;
+    padding: 0;
   }
   
   .menu li {
@@ -49,4 +50,8 @@
   a{
     text-decoration: none;
     color: inherit;
+  }
+
+  p{
+    margin-bottom: 0px;
   }

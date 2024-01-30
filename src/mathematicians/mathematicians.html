@@ -7,16 +7,56 @@
     </title>
     <link rel="stylesheet" href="../public/menu.css" />
     <link rel="stylesheet" href="./mathematicians.css" />
+    <link rel="stylesheet" href="../public/loading.css">
+
+
 </head>
 <body>
+
+
     <div class="menu">
-        <li><a href="/index.html">首页</a></li>
-        <li><a href="/src/books/books.html">中国数学古籍</a></li>
-        <li class="active"><a href="/src/mathematicians/mathematicians.html">中国数学伟士</a></li>
-        <li><a href="/src/about/about.html">关于</a></li>
+        <li><p onclick="loading.in('/index.html')">首页</p></li>
+        <li><p onclick="loading.in('/src/books/books.html')">中国数学古籍</p></li>
+        <li class="active"><p onclick="loading.in('/src/mathematicians/mathematicians.html')">中国数学伟士</p></li>
+        <li><p onclick="loading.in('/src/about/about.html')">关于</p></li>
     </div>
-    <div class="iframe">    
-        <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1giWosHjSDphPKkFYOxnBmEHfcAJnTdR2m7XbpE5atDI&font=Default&lang=zh-cn&initial_zoom=2&height=650'  width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
-    </div>
+
+            <!-- loading part -->
+            <div class="loading">
+                <div id="load">
+                <div>3</div>
+                <div>.</div>
+                <div>1</div>
+                <div>4</div>
+                <div>1</div>
+                <div>5</div>
+                <div>9</div>
+                <div>2</div>
+                <div>6</div>
+                </div>
+            </div>
+            
+    <section>
+        <div class="iframe">    
+            <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1giWosHjSDphPKkFYOxnBmEHfcAJnTdR2m7XbpE5atDI&font=Default&lang=zh-cn&initial_zoom=2&height=650'  width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+        </div>
+    </section>
 </body>
+<script>
+    const loading = {
+        container: document.querySelector(".loading"),
+        in(target) {
+            this.container.classList.remove("loading_out");
+            setTimeout(() => {
+            window.location.href = target;
+            }, 2000)
+        },
+        out() {
+            this.container.classList.add("loading_out");
+        }
+    };
+    window.addEventListener("load", () => {
+        loading.out();
+    })
+</script>
 </html>
