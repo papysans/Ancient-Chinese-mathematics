@@ -1,8 +1,0 @@
-Model Information:
-* title:	Retro soroban - Japanese abacus
-* source:	https://sketchfab.com/3d-models/retro-soroban-japanese-abacus-1b9cdd5995bd4e72999e2aef20825136
-* author:	shizuniik (https://sketchfab.com/shizuniik)
-
-Model License:
-* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
-* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

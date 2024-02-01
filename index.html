@@ -13,11 +13,12 @@
         <link rel="stylesheet" href="./src/homepage/home-page.css" />
         <link rel="stylesheet" href="./src/homepage/footer.css" />
         <link rel="stylesheet" href="./src/public/loading.css">
-        <script type="module" src="./src/homepage/home-page.js"></script>
-        <!-- <script type="module" src="./src/homepage/model.js"></script> -->
-        <script type="module" src="./src/homepage/model-1.js"></script>
         <link rel="stylesheet" href="./src/timeline/timeline.css" />
         <link rel="stylesheet" href="./src/public/menu.css" />
+        <script type="module" src="./src/homepage/home-page.js"></script>
+        <!-- <script type="module" src="./src/homepage/model.js"></script> -->
+        <!-- <script type="module" src="./src/homepage/model-1.js"></script> -->
+        <script type="module" src="./src/homepage/model-2.js"></script>
         <script type="text/javascript" src="./src/timeline/timeline.js"></script>
     </head>
 
@@ -136,7 +137,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/8590a16ae592405c838f76aecb5801e2.jpeg"
+                                src="./image/timeline/400BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 400 BC
@@ -257,7 +258,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/300px-张邱建算经.jpg"
+                                src="./image/timeline/466BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 466 BC
@@ -271,7 +272,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/v2-cb638017f3976b9eb7ef0c3b3f258b00_720w.png"
+                                src="./image/timeline/550BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 550 BC
@@ -285,7 +286,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/v2-a79d8a98566045598c73a4ad71bbc75d_720w.png"
+                                src="./image/timeline/600BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 600 BC
@@ -296,14 +297,14 @@
                             </p>
                         </div>
                     </div>
-                    <div class="timeline-item" data-text="656 BC">
+                    <div class="timeline-item" data-text="620 BC">
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/7db52a97f100fb9b30e9f76eb7afdeb1.jpg"
+                                src="./image/timeline/620BC.png"
                             />
                             <h2 class="timeline__content-title">
-                                656 BC
+                                620 BC
                             </h2>
                             <p class="timeline__content-desc">
                                 中国唐朝的王孝通著《辑古算经》，解决了大规模土方工程中提出的三次方程求正根的问题。
@@ -630,7 +631,7 @@ const loading = {
         this.container.classList.remove("loading_out");
         setTimeout(() => {
         window.location.href = target;
-        }, 1000)
+        }, 1500)
     },
     out() {
         this.container.classList.add("loading_out");

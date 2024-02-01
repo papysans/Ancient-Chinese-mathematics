@@ -45,14 +45,25 @@ renderer.outputEncoding = THREE.sRGBEncoding
 
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/');
-loader.load('scene.gltf', function (gltf)  {
+loader.load('铜尺.gltf', function (gltf)  {
         const model = gltf.scene
         // model.traverse( child => child.material = bakedMaterial )
         scene.add(model)
-		scene.position.set(0,0,0)
-        model.scale.set(20, 20, 20)
-        const light = new THREE.AmbientLight( 0x404040, 2.5 ); // 柔和的白光
-        scene.add( light );
+		scene.position.set(0,-1,0)
+        model.scale.set(250, 250, 250)
+        // const light = new THREE.AmbientLight(0x404040, 2500); // 柔和的白光
+        // scene.add( light );
+        // 添加一个点光源
+        const pointLight = new THREE.PointLight(0xffffff, 100);
+        pointLight.position.set(50, 50, 50);
+        scene.add(pointLight);
+
+        // 添加一个方向光源
+        const dirLight = new THREE.DirectionalLight(0xffffff, 100);
+        dirLight.position.set(0, 50, 0);
+        dirLight.position.set(50, 0, 0);
+        dirLight.position.set(0, 0, 50);
+        scene.add(dirLight);
     }
 )
 
