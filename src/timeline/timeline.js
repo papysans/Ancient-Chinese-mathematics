@@ -7,12 +7,14 @@
             img: ".timeline__img",
         };
         selectors.item.eq(0).addClass(selectors.activeClass);
-        selectors.id.css(
-            "background-image",
-            "url(" +
-                selectors.item.first().find(selectors.img).attr("src") +
-                ")"
-        );
+        selectors.id.css({
+            "background-image": "url(" + selectors.item.first().find(selectors.img).attr("src") + ")",
+            "width": "100%",
+            "height": "100%",
+            "background-size": "contain",
+            "background-repeat": "no-repeat",
+            "background-position": "center"
+        });
         var itemLength = selectors.item.length;
         $(window).scroll(function () {
             var max, min;
