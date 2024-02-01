@@ -1,3 +1,5 @@
+let round = 0;
+
 const canvas = document.querySelector('.webgl')
 const scene = new THREE.Scene()
 const textureLoader = new THREE.TextureLoader()
@@ -18,10 +20,10 @@ const controls = new THREE.OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls.enableZoom =false
 controls.enablePan = true
-controls.minDistance = 21
-controls.maxDistance = 50
-controls.minPolarAngle = Math.PI / 5
-controls.maxPolarAngle = Math.PI / 2
+// controls.minDistance = 21
+// controls.maxDistance = 50
+// controls.minPolarAngle = Math.PI / 5
+// controls.maxPolarAngle = Math.PI / 2
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
@@ -69,8 +71,12 @@ var minPan = new THREE.Vector3( -2, -.5, -2 )
 var maxPan = new THREE.Vector3( 2, .5, 2 )
 
 const tick = () => {
+    // round += 0.0015;
+    // camera.position.x = Math.sin(round) * 20;
+    // camera.position.z = Math.cos(round) * 20;
+    // camera.position.y = Math.cos(round) * 10;
     controls.update()
-	controls.target.clamp( minPan, maxPan )
+	// controls.target.clamp( minPan, maxPan )
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
 }
