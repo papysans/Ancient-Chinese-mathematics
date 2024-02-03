@@ -9,17 +9,25 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
         <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
         <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
+        <script src="https://unpkg.com/three@0.126.0/examples/js/lights/RectAreaLightUniformsLib.js"></script>
+
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+        <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
         <link rel="stylesheet" href="./src/homepage/home-page.css" />
         <link rel="stylesheet" href="./src/homepage/footer.css" />
         <link rel="stylesheet" href="./src/public/loading.css">
         <link rel="stylesheet" href="./src/timeline/timeline.css" />
         <link rel="stylesheet" href="./src/public/menu.css" />
+        <link rel="stylesheet" href="./src/public/background.css">
+        <link rel="stylesheet" href="./src/public/background-index.css">
         <script type="module" src="./src/homepage/home-page.js"></script>
         <!-- <script type="module" src="./src/homepage/model.js"></script> -->
-        <!-- <script type="module" src="./src/homepage/model-1.js"></script> -->
-        <script type="module" src="./src/homepage/model-2.js"></script>
+        <script type="module" src="./src/homepage/model-1.js"></script>
+        <!-- <script type="module" src="./src/homepage/model-2.js"></script> -->
         <script type="text/javascript" src="./src/timeline/timeline.js"></script>
+        <script type="text/javascript" src="./src/public/background.js"></script>
+
     </head>
 
     <body>
@@ -48,6 +56,7 @@
 
         <!-- canvas part -->
         <div class="headline-container">
+            <div class="headline-background"></div>
             <div id="text-behind">中国古代数学<br />Ancient Chinese Mathematics</div>
             <div id="text-behind-blur">中国古代数学<br />Ancient Chinese Mathematics</div>
             <div id="text-front">中国古代数学<br />Ancient Chinese Mathematics</div>
@@ -58,42 +67,42 @@
         <div class="main-content">
             <div class="timeline-container" id="timeline-1">
                 <div class="timeline">
-                    <div class="timeline-item" data-text="4000 BC">
+                    <div class="timeline-item" data-text="4000 AC">
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
                                 src="image/timeline/4000BC.png"
                             />
                             <h2 class="timeline__content-title">
-                                4000 BC
+                                4000 AC
                             </h2>
                             <p class="timeline__content-desc">
                                 中国西安半坡的陶器上出现数字刻符。半坡陶符是中国新石器时代一种接近文字形式的符号，在西安半坡遗址出土。出土陶器和陶片上刻画的符号共有27种。这些陶符，还在陕西宝鸡北首岭、长安五楼、郃阳莘野、铜川李家沟和临潼姜寨、零口、垣头等仰韶文化遗址中发现。
                             </p>
                         </div>
                     </div>
-                    <div class="timeline-item" data-text="2700 BC">
+                    <div class="timeline-item" data-text="2700 AC">
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
                                 src="./image/timeline/2700BC.png"
                             />
                             <h2 class="timeline__content-title">
-                                2700 BC
+                                2700 AC
                             </h2>
                             <p class="timeline__content-desc">
                                 中国黄帝时代传说隶首做算数之说，大挠发明了甲子。
                             </p>
                         </div>
                     </div>
-                    <div class="timeline-item" data-text="2500 BC">
+                    <div class="timeline-item" data-text="2500 AC">
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
                                 src="./image/timeline/2500BC.png"
                             />
                             <h2 class="timeline__content-title">
-                                2500 BC
+                                2500 AC
                             </h2>
                             <p class="timeline__content-desc">
                                 据中国战国时尸佼著《尸子》记载：
@@ -103,14 +112,14 @@
                             </p>
                         </div>
                     </div>
-                    <div class="timeline-item" data-text="2100 BC">
+                    <div class="timeline-item" data-text="2100 AC">
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
                                 src="./image/timeline/2100BC.png"
                             />
                             <h2 class="timeline__content-title">
-                                2100 BC
+                                2100 AC
                             </h2>
                             <p class="timeline__content-desc">
                                 中国夏朝出现象征吉祥的河图洛书纵横图，即为
@@ -119,56 +128,56 @@
                             </p>
                         </div>
                     </div>
-                    <div class="timeline-item" data-text="1400 BC">
+                    <div class="timeline-item" data-text="1400 AC">
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
                                 src="./image/timeline/1400BC.png"
                             />
                             <h2 class="timeline__content-title">
-                                1400 BC
+                                1400 AC
                             </h2>
                             <p class="timeline__content-desc">
                                 中国殷代甲骨文卜辞记录已有十进制记数，最大数字是三万。
                             </p>
                         </div>
                     </div>
-                    <div class="timeline-item" data-text="400 BC">
+                    <div class="timeline-item" data-text="400 AC">
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
                                 src="./image/timeline/400BC.png"
                             />
                             <h2 class="timeline__content-title">
-                                400 BC
+                                400 AC
                             </h2>
                             <p class="timeline__content-desc">
                                 中国战国时期的《墨经》中记载了一些几何学的义理。战国时期的中国，筹算成为当时的主要计算方法；出现《庄子》、《考工记》记载中的极限概念、分数运算法、特殊角度概念及对策论的例证。
                             </p>
                         </div>
                     </div>
-                    <div class="timeline-item" data-text="170 BC">
+                    <div class="timeline-item" data-text="170 AC">
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
                                 src="./image/641.webp"
                             />
                             <h2 class="timeline__content-title">
-                                170 BC
+                                170 AC
                             </h2>
                             <p class="timeline__content-desc">
                                 湖北出现竹简算书《算数书》。
                             </p>
                         </div>
                     </div>
-                    <div class="timeline-item" data-text="100 BC">
+                    <div class="timeline-item" data-text="100 AC">
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/400px-Qihengtu1213CE.png"
+                                src="./image/timeline/100BC.png"
                             />
                             <h2 class="timeline__content-title">
-                                100 BC
+                                100 AC
                             </h2>
                             <p class="timeline__content-desc">
                                 中国的《周髀算经》发表。其中阐述了“盖天说”
@@ -180,7 +189,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/cf54a3405d2f42c59608eb488d838fa7.gif"
+                                src="./image/timeline/50BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 50 BC
@@ -197,7 +206,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/0.gif"
+                                src="./image/timeline/300BC-1.png"
                             />
                             <h2 class="timeline__content-title">
                                 300 BC
@@ -211,7 +220,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/0.gif"
+                                src="./image/timeline/300BC-2.png"
                             />
                             <h2 class="timeline__content-title">
                                 300 BC
@@ -225,7 +234,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/0.gif"
+                                src="./image/timeline/300BC-3.png"
                             />
                             <h2 class="timeline__content-title">
                                 300 BC
@@ -244,7 +253,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/91091efc77f7980e51ecb4c6d4db3620b83a9167.webp"
+                                src="./image/timeline/463BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 463 BC
@@ -315,15 +324,14 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/300px-WUCHAO_SUANJING-073-073.jpg"
+                                src="./image/timeline/656BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 656 BC
                             </h2>
                             <p class="timeline__content-desc">
                                 中国唐代李淳风等奉旨著《“十部算经”注释》，作为国子监算学馆的课本。
-                                “十部算经”
-                                指：《周髀》《九章算术》《海岛算经》《张邱建算经》《五经算术》等。
+                                “十部算经”指：《周髀》《九章算术》《海岛算经》《张邱建算经》《五经算术》等。
                             </p>
                         </div>
                     </div>
@@ -331,7 +339,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/18772254af65d9d64a4412.jfif"
+                                src="./image/timeline/1019BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1019 BC
@@ -345,7 +353,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/0.jpg"
+                                src="./image/timeline/727BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 727 BC
@@ -359,7 +367,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/JIA_XIAN_SQRT2.gif"
+                                src="./image/timeline/1050BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1050 BC
@@ -376,7 +384,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/夢溪筆談.jpg"
+                                src="./image/timeline/1093BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1093 BC
@@ -392,7 +400,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/1138049412599152640.png"
+                                src="./image/timeline/1247BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1247 BC
@@ -408,7 +416,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/下载.jfif"
+                                src="./image/timeline/1248BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1248 BC
@@ -423,7 +431,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/r200607124.008.640ca9.jpg"
+                                src="./image/timeline/1261BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1261 BC
@@ -438,7 +446,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/20170603173726614.png"
+                                src="./image/timeline/1274BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1274 BC
@@ -454,7 +462,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/The-determination-of-reaction-order-by-the-differential-method.png"
+                                src="./image/timeline/1280BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1280 BC
@@ -469,7 +477,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/Siyuan2.png"
+                                src="./image/timeline/1303BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1303 BC
@@ -484,7 +492,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/Abacus_5.jpg"
+                                src="./image/timeline/1450BC.png"
                             />
                             <h2 class="timeline__content-title">
                                 1450 BC
@@ -520,7 +528,7 @@
         </div>
 
         <!-- bobble part -->
-        <div class="bottom-particles">
+        <div class="bottom">
             <div class="number">1</div>
             <div class="number">2</div>
             <div class="number">3</div>
@@ -622,6 +630,10 @@
             <div class="number">9</div>
             <div class="number">0</div>
         </div>
+
+        <!-- background part -->
+        <div id="particles-js"></div> 
+
     </body>
 
 <script>

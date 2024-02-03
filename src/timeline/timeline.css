@@ -1,27 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
 .timeline {
+  /* z-index: 2; */
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
   flex-direction: column;
-  max-width: 700px;
+  max-width: 1200px;
   position: relative;
 }
 .timeline__content-title {
   font-weight: normal;
-  font-size: 66px;
+  font-size: 90px;
   margin: -10px 0 0 0;
   transition: 0.4s;
   padding: 0 10px;
   box-sizing: border-box;
   font-family: "Pathway Gothic One", sans-serif;
-  color: #fff;
+  color: #BEBEBE;
 }
 .timeline__content-desc {
   margin: 0;
-  font-size: 15px;
+  font-size: 18px;
   box-sizing: border-box;
-  color: rgba(255, 255, 255, 0.7);
+  color: #bebebee2;
   font-family: Cardo;
   font-weight: normal;
   line-height: 25px;
@@ -33,7 +34,7 @@
   height: 100%;
   margin-left: -1px;
   content: "";
-  background: rgba(255, 255, 255, 0.07);
+  background: #ffb2b24a;
 }
 @media only screen and (max-width: 767px) {
   .timeline:before {
@@ -53,16 +54,17 @@
 }
 .timeline-item:before {
   content: attr(data-text);
-  letter-spacing: 3px;
+  text-align: left;
+  letter-spacing: 5px;
   width: 100%;
   position: absolute;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 45px;
+  color: #ffb2b281;
+  font-size: 55px;
   font-family: "Pathway Gothic One", sans-serif;
-  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  border-left: 2px solid #ffb2b281;
   top: 70%;
   margin-top: -5px;
-  padding-left: 15px;
+  padding-left: 30px;
   opacity: 0;
   right: calc(-100% - 56px);
 }
@@ -75,7 +77,7 @@
   left: calc(-100% - 56px);
   padding-left: 0;
   border-left: none;
-  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  border-right: 2px solid #ffb2b281;
   padding-right: 15px;
 }
 .timeline-item--active {
@@ -110,7 +112,9 @@
   }
 }
 .timeline__img {
-  max-width: 100%;
+  width: 500px;  
+  height: 400px;  
+  object-fit: contain;  
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
 }
 .timeline-container {
@@ -139,21 +143,6 @@
   display: flex; 
   justify-content: center; 
   align-items: center;
-}
-.timeline-header__title {
-  color: #fff;
-  font-size: 46px;
-  font-family: Cardo;
-  font-weight: normal;
-  margin: 0;
-}
-.timeline-header__subtitle {
-  color: rgba(255, 255, 255, 0.5);
-  font-family: "Pathway Gothic One", sans-serif;
-  font-size: 16px;
-  letter-spacing: 5px;
-  margin: 10px 0 0 0;
-  font-weight: normal;
 }
 .timeline-futrue {
     font-size: 30px;

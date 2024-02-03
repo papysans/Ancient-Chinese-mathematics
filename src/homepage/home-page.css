@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-  --headline-color: white;
+  --headline-color: #BEBEBE;
   --background-color: #11151c;
-  --text-color: rgba(255, 255, 255, 0.502);
+  --text-color: #BEBEBE;
 }
 
 html, body {
@@ -22,7 +22,17 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 3;
+}
+
+.headline-background {
+  position: absolute;  
+  z-index: 1;  
+  top: 0;  
+  left: 0;  
+  width: 100%; 
+  height: 100%;  
+  background: #3f3f3f;  
 }
 
 .headline-container{
@@ -50,21 +60,22 @@ html, body {
 
 #text-behind {
   color: var(--headline-color);
-  z-index: 1;
+  z-index: 2;
 }
 
 #text-behind-blur {
   color: var(--headlicne-color);
+  
   filter: blur(7.5px);
   -webkit-filter: blur(7.5px);
-  z-index: 0;
+  z-index: 1;
 }
 
 #text-front {
   color: rgba(0, 0, 0, 0);
-  /* --headline-color: #8e5e2e; */
+  --headline-color: #BEBEBE;
   -webkit-text-stroke: 2px var(--headline-color);
-  z-index: 3;
+  z-index: 4;
 }
 
 /* Less relevant code */
@@ -85,19 +96,28 @@ html, body {
 
 body {
   overflow: hidden;
-  /* background-color: #3f3f3f; */
+  cursor: grab;
+  background-color: #3f3f3f;
 
   /* background-image: url(../../image/bg.jpg); */
-/* 
-  background: linear-gradient(-45deg, #ffecc1, #c4d1f7, #505eab, #3b446d);
+  
+  /* background: linear-gradient(-45deg, #182B3A, #20A4F3, #505eab, #3b446d);
 	background-size: 400% 400%;
 	animation: gradient 5s ease infinite; */
 
-  background: #16335a;
-  animation: changeBg 30s infinite alternate;
+  /* background: #16335a;
+  animation: changeBg 10s infinite alternate; */
 
-  cursor: grab;
+  /* background: linear-gradient(124deg, #9fa4c4, #a1a7c5, #a3adc7, #a7b4c9, #a9b8ca, #abbecc, #aec3ce, #b0c8cf, #b3cdd1);
+  background-size: 1800% 1800%;
+
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite; */
+  
 }
+
 
 .webgl {
   top: 0;
@@ -117,4 +137,25 @@ body {
  75%{
     background: #7899a7;
  }
+}
+
+@-webkit-keyframes rainbow {
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
 }

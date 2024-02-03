@@ -1,4 +1,5 @@
-let round = 0;
+let round = 0 ;
+
 
 const canvas = document.querySelector('.webgl')
 const scene = new THREE.Scene()
@@ -20,10 +21,7 @@ const controls = new THREE.OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls.enableZoom =false
 controls.enablePan = true
-// controls.minDistance = 21
-// controls.maxDistance = 50
-// controls.minPolarAngle = Math.PI / 5
-// controls.maxPolarAngle = Math.PI / 2
+
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
@@ -36,36 +34,43 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 
-// // Materials
-// const bakedTexture = textureLoader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/47b05e2db4e49eec33d63729e920894a906cb693/static/baked.jpg')
-// bakedTexture.flipY = false
-// bakedTexture.encoding = THREE.sRGBEncoding
-
-// const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/');
 loader.load('铜尺.gltf', function (gltf)  {
-        const model = gltf.scene
-        // model.traverse( child => child.material = bakedMaterial )
-        scene.add(model)
-		scene.position.set(0,-1,0)
-        model.scale.set(250, 250, 250)
-        // const light = new THREE.AmbientLight(0x404040, 2500); // 柔和的白光
-        // scene.add( light );
-        // 添加一个点光源
-        const pointLight = new THREE.PointLight(0xffffff, 100);
-        pointLight.position.set(50, 50, 50);
-        scene.add(pointLight);
+    THREE.RectAreaLightUniformsLib.init();
+    const model = gltf.scene
 
-        // 添加一个方向光源
-        const dirLight = new THREE.DirectionalLight(0xffffff, 100);
-        dirLight.position.set(0, 50, 0);
-        dirLight.position.set(50, 0, 0);
-        dirLight.position.set(0, 0, 50);
-        scene.add(dirLight);
-    }
-)
+    const texture = textureLoader.load('../../model/1/材质.jpg');
+    
+    // Materials
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(30,30);
+    model.traverse((child) => {
+        if (child.isMesh) {
+            child.material.map = texture;
+        }
+    });
+    scene.add(model)
+    scene.position.set(.5,-1,0)
+    model.scale.set(200, 200, 200)
+    model.rotation.z = THREE.Math.degToRad(45);
+    model.rotation.x = THREE.Math.degToRad(-5);
+
+    // 创建一个矩形光源
+    const rectLight1 = new THREE.RectAreaLight(0x6e8378, 2, 200, 200);
+    rectLight1.position.set(0, 10, 0);
+    rectLight1.lookAt(0, 0, 0);
+    scene.add(rectLight1);
+
+    const rectLight2 = new THREE.RectAreaLight(0x7b9286, .5, 40, 40);
+    rectLight2.position.set(0, -10, 0);
+    rectLight2.lookAt(0, 0, 0);
+    scene.add(rectLight2);
+
+})
+
 
 window.addEventListener('resize', () =>
 {
@@ -76,18 +81,14 @@ window.addEventListener('resize', () =>
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
-// Animation
 
-var minPan = new THREE.Vector3( -2, -.5, -2 )
-var maxPan = new THREE.Vector3( 2, .5, 2 )
 
 const tick = () => {
     // round += 0.0015;
-    // camera.position.x = Math.sin(round) * 20;
-    // camera.position.z = Math.cos(round) * 20;
-    // camera.position.y = Math.cos(round) * 10;
+    // const offsetX = Math.sin(round) * 20;
+    // const offsetZ = Math.cos(round) * 20;
+    // controls.target.set(offsetX, camera.position.y, offsetZ);
     controls.update()
-	// controls.target.clamp( minPan, maxPan )
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
 }
