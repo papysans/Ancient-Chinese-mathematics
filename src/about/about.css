@@ -1,21 +1,10 @@
-@charset "utf-8";
-
-/******* Fonts Import Start **********/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-/********* Fonts Face CSS End **********/
-
-/******* Common Element CSS Start ******/
 * {
   margin: 0px;
   padding: 0px;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "HarmonyOS_Sans_SC_Light";
   font-size: 16px;
-  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 5s ease infinite; */
-  /* background-image: url(../../image/bg.jpg); */
   background-color: #3f3f3f;
 	height: 100vh;
 }
@@ -29,32 +18,14 @@ ol {
   list-style: none;
 }
 a {
-  text-decoration: none;
   color: inherit;
   outline: none;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
 }
-a:focus,
-a:active,
-a:visited,
-a:hover {
-  text-decoration: none;
-  outline: none;
-}
-a:hover {
-  color: #ffffff;
-}
-h2 {
-  margin-bottom: 48px;
-  padding-bottom: 16px;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 700;
-  position: relative;
-  text-transform: capitalize;
-}
+
 h3 {
+  font-family: "HarmonyOS_Sans_SC_Medium";
   margin: 0 0 10px;
   font-size: 28px;
   line-height: 36px;
@@ -234,16 +205,4 @@ button {
     transform: translateY(calc(100% - 42px));
     -webkit-transform: translateY(calc(100% - 42px));
   }
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }

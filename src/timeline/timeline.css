@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
 .timeline {
-  /* z-index: 2; */
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
@@ -9,13 +8,13 @@
   position: relative;
 }
 .timeline__content-title {
-  font-weight: normal;
+  /* font-weight: normal; */
   font-size: 90px;
   margin: -10px 0 0 0;
   transition: 0.4s;
   padding: 0 10px;
   box-sizing: border-box;
-  font-family: "Pathway Gothic One", sans-serif;
+  font-family: "HarmonyOS_Sans_SC_Medium";
   color: #BEBEBE;
 }
 .timeline__content-desc {
@@ -23,8 +22,8 @@
   font-size: 18px;
   box-sizing: border-box;
   color: #bebebee2;
-  font-family: Cardo;
-  font-weight: normal;
+  font-family: "HarmonyOS_Sans_SC_Light";
+  /* font-weight: normal; */
   line-height: 25px;
 }
 .timeline:before {
@@ -60,7 +59,8 @@
   position: absolute;
   color: #ffb2b281;
   font-size: 55px;
-  font-family: "Pathway Gothic One", sans-serif;
+  font-family: "HarmonyOS_Sans_SC_Medium";
+  letter-spacing: 2px;
   border-left: 2px solid #ffb2b281;
   top: 70%;
   margin-top: -5px;
@@ -146,7 +146,7 @@
 }
 .timeline-futrue {
     font-size: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "HarmonyOS_Sans_SC_Medium";
     text-align: center;
     padding:100px 0;
 }
@@ -157,5 +157,5 @@
 .demo-footer a {
   color: #999;
   display: inline-block;
-  font-family: Cardo;
+  font-family: "HarmonyOS_Sans_SC_Thin";
 }

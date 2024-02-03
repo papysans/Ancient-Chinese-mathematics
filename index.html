@@ -20,14 +20,17 @@
         <link rel="stylesheet" href="./src/timeline/timeline.css" />
         <link rel="stylesheet" href="./src/public/menu.css" />
         <link rel="stylesheet" href="./src/public/background.css">
+        <link rel="stylesheet" href="./src/public/font.css">
         <link rel="stylesheet" href="./src/public/background-index.css">
         <script type="module" src="./src/homepage/home-page.js"></script>
         <!-- <script type="module" src="./src/homepage/model.js"></script> -->
-        <script type="module" src="./src/homepage/model-1.js"></script>
+        <!-- <script type="module" src="./src/homepage/model-1.js"></script> -->
         <!-- <script type="module" src="./src/homepage/model-2.js"></script> -->
+        <script type="text/javascript" src="./src/homepage/hide-text.js"></script>
+        <script type="text/javascript" src="./src/homepage/model-load.js"></script>
         <script type="text/javascript" src="./src/timeline/timeline.js"></script>
         <script type="text/javascript" src="./src/public/background.js"></script>
-
+        <script type="text/javascript" src="./src/homepage/hide-text.js"></script>
     </head>
 
     <body>
@@ -62,6 +65,7 @@
             <div id="text-front">中国古代数学<br />Ancient Chinese Mathematics</div>
         </div>
         <canvas id ="canvas" class="webgl canvas-container"></canvas>
+        <button id="change-button" onclick="changeColor()">隐藏文字</button>
 
         <!-- timeline part -->
         <div class="main-content">
@@ -160,7 +164,7 @@
                         <div class="timeline__content">
                             <img
                                 class="timeline__img"
-                                src="./image/641.webp"
+                                src="./image/timeline/170AC.png"
                             />
                             <h2 class="timeline__content-title">
                                 170 AC
@@ -652,5 +656,6 @@ const loading = {
 window.addEventListener("load", () => {
     loading.out();
 })
+
 </script>
 </html>

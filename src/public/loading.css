@@ -36,7 +36,7 @@
 	width:20px;
 	height:36px;
 	opacity:0;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: "HarmonyOS_Sans_SC_Bold";
 	animation:move 2.5s linear infinite;
 	-o-animation:move 2.5s linear infinite;
 	-moz-animation:move 2.5s linear infinite;

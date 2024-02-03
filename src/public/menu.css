@@ -28,7 +28,7 @@
     color: rgba(255, 255, 255, 0.541);
     transition: color 0.3s ease;
     position: relative;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "HarmonyOS_Sans_SC_Medium" !important;
   }
   
   .menu li:hover {
