@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>中国古代数学</title>
 
-        <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
-        <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
-        <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
-        <script src="https://unpkg.com/three@0.126.0/examples/js/lights/RectAreaLightUniformsLib.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中国古代数学</title>
 
-        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-        <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/lights/RectAreaLightUniformsLib.js"></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
-        <link rel="stylesheet" href="./src/homepage/home-page.css" />
-        <link rel="stylesheet" href="./src/homepage/footer.css" />
-        <link rel="stylesheet" href="./src/public/loading.css">
-        <link rel="stylesheet" href="./src/timeline/timeline.css" />
-        <link rel="stylesheet" href="./src/public/menu.css" />
-        <link rel="stylesheet" href="./src/public/background.css">
-        <link rel="stylesheet" href="./src/public/font.css">
-        <link rel="stylesheet" href="./src/public/background-index.css">
-        <script type="module" src="./src/homepage/home-page.js"></script>
-        <!-- <script type="module" src="./src/homepage/model.js"></script> -->
-        <!-- <script type="module" src="./src/homepage/model-1.js"></script> -->
-        <!-- <script type="module" src="./src/homepage/model-2.js"></script> -->
-        <script type="text/javascript" src="./src/homepage/hide-text.js"></script>
-        <script type="text/javascript" src="./src/homepage/model-load.js"></script>
-        <script type="text/javascript" src="./src/timeline/timeline.js"></script>
-        <script type="text/javascript" src="./src/public/background.js"></script>
-        <script type="text/javascript" src="./src/homepage/hide-text.js"></script>
-    </head>
+    <link rel="stylesheet" href="./src/homepage/home-page.css" />
+    <link rel="stylesheet" href="./src/homepage/footer.css" />
+    <link rel="stylesheet" href="./src/public/loading.css">
+    <link rel="stylesheet" href="./src/timeline/timeline.css" />
+    <link rel="stylesheet" href="./src/public/menu.css" />
+    <link rel="stylesheet" href="./src/public/background.css">
+    <link rel="stylesheet" href="./src/public/font.css">
+    <link rel="stylesheet" href="./src/public/background-index.css">
+    <script type="module" src="./src/homepage/home-page.js"></script>
+    <!-- <script type="module" id="model-script" src="./src/homepage/model-1.js"></script> -->
+    <!-- <script type="module" id="model-script" src="./src/homepage/model-2.js"></script> -->
+    <!-- <script type="module" id="model-script" src="./src/homepage/model-3.js"></script> -->
+    <script type="text/javascript" src="./src/homepage/hide-text.js"></script>
+    <!-- <script type="text/javascript" src="./src/homepage/model-load.js"></script> -->
+    <script type="text/javascript" src="./src/homepage/changeModel.js"></script>
+    <script type="text/javascript" src="./src/timeline/timeline.js"></script>
+    <script type="text/javascript" src="./src/public/background.js"></script>
+    <script type="text/javascript" src="./src/homepage/hide-text.js"></script>
+</head>
 
-    <body>
-        <!-- loading part -->
-        <div class="loading">
-            <div id="load">
+<body>
+    <!-- loading part -->
+    <div class="loading">
+        <div id="load">
             <div>3</div>
             <div>.</div>
             <div>1</div>
@@ -46,489 +47,416 @@
             <div>9</div>
             <div>2</div>
             <div>6</div>
+        </div>
+    </div>
+
+    <!-- menu part -->
+    <div class="menu">
+        <li class="active"><a onclick="loading.in('/index.html')">首页</a></li>
+        <li><a onclick="loading.in('./src/books/books.html')">中国数学古籍</a></li>
+        <li><a onclick="loading.in('./src/mathematicians/mathematicians.html')">中国数学伟士</a></li>
+        <li><a onclick="loading.in('./src/about/about.html')">关于</a></li>
+    </div>
+
+    <!-- canvas part -->
+    <div class="headline-container">
+        <div class="headline-background"></div>
+        <div id="text-behind">中国古代数学<br />Ancient Chinese Mathematics</div>
+        <div id="text-behind-blur">中国古代数学<br />Ancient Chinese Mathematics</div>
+        <div id="text-front">中国古代数学<br />Ancient Chinese Mathematics</div>
+    </div>
+    <canvas id="canvas" class="webgl canvas-container"></canvas>
+    <div class="fkbuttons">
+        <div class="container">
+            <div class="tabs">
+                <input type="radio" id="radio-1" name="tabs" checked />
+                <label class="tab" for="radio-1" >新莽铜卡尺</label>
+                <input type="radio" id="radio-2" name="tabs" />
+                <label class="tab" for="radio-2" >算盘</label>
+                <input type="radio" id="radio-3" name="tabs" />
+                <label class="tab" for="radio-3" >圆规</label>
+                <span class="glider"></span>
             </div>
         </div>
-
-        <!-- menu part -->
-        <div class="menu">
-            <li class="active"><a onclick="loading.in('/index.html')">首页</a></li>
-            <li><a onclick="loading.in('./src/books/books.html')">中国数学古籍</a></li>
-            <li><a onclick="loading.in('./src/mathematicians/mathematicians.html')">中国数学伟士</a></li>
-            <li><a onclick="loading.in('./src/about/about.html')">关于</a></li>
-        </div>
-
-        <!-- canvas part -->
-        <div class="headline-container">
-            <div class="headline-background"></div>
-            <div id="text-behind">中国古代数学<br />Ancient Chinese Mathematics</div>
-            <div id="text-behind-blur">中国古代数学<br />Ancient Chinese Mathematics</div>
-            <div id="text-front">中国古代数学<br />Ancient Chinese Mathematics</div>
-        </div>
-        <canvas id ="canvas" class="webgl canvas-container"></canvas>
         <button id="change-button" onclick="changeColor()">隐藏文字</button>
+    </div>
 
-        <!-- timeline part -->
-        <div class="main-content">
-            <div class="timeline-container" id="timeline-1">
-                <div class="timeline">
-                    <div class="timeline-item" data-text="4000 AC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="image/timeline/4000BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                4000 AC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国西安半坡的陶器上出现数字刻符。半坡陶符是中国新石器时代一种接近文字形式的符号，在西安半坡遗址出土。出土陶器和陶片上刻画的符号共有27种。这些陶符，还在陕西宝鸡北首岭、长安五楼、郃阳莘野、铜川李家沟和临潼姜寨、零口、垣头等仰韶文化遗址中发现。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="2700 AC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/2700BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                2700 AC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国黄帝时代传说隶首做算数之说，大挠发明了甲子。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="2500 AC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/2500BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                2500 AC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                据中国战国时尸佼著《尸子》记载：
-                                “古者，陲 ( 注：传说为黄帝或尧时人)
-                                为规、矩、准、绳，使天下仿焉”。这相当于在已有“
-                                圆，方、平、直”等形的概念。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="2100 AC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/2100BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                2100 AC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国夏朝出现象征吉祥的河图洛书纵横图，即为
-                                “ 九宫算 ” ，这被认为是现代 “ 组合数学 ”
-                                最古老的发现。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1400 AC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1400BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1400 AC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国殷代甲骨文卜辞记录已有十进制记数，最大数字是三万。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="400 AC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/400BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                400 AC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国战国时期的《墨经》中记载了一些几何学的义理。战国时期的中国，筹算成为当时的主要计算方法；出现《庄子》、《考工记》记载中的极限概念、分数运算法、特殊角度概念及对策论的例证。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="170 AC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/170AC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                170 AC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                湖北出现竹简算书《算数书》。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="100 AC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/100BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                100 AC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国的《周髀算经》发表。其中阐述了“盖天说”
-                                和四分历法，使用分数算法和开方法等。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="50 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/50BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                50 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                继西汉张苍、耿寿昌删补校订之后，东汉时纂编成
-                                《九章算术》
-                                ，这是中国最早的数学专著，收集了246
-                                个问题的解法。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="300 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/300BC-1.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                300 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                魏晋时期，中国的赵爽在《勾股圆方图注》中列出了关于直角三角形三边之间关系的命题共21 条。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="300 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/300BC-2.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                300 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                刘徽割圆术是建立在圆面积论的基础之上的。他首先论证，将圆分割成多边形，分割来越细，多边形的边数越多，多边形的面积就和圆面积没有差别了。他说，将6边形一边的长度乘以圆半径，再乘3，得12边形的面积。将12边形的一边长乘半径，再乘6，得24边形面积。越割越细，多边形和圆面积的差越小。如此割了再割，最后终于和圆合为一体，毫无差别了。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="300 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/300BC-3.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                300 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                刘徽著《海岛算经》，论述了有关测量和计算海岛的距离、高度的方法。刘徽结合古代重差术编撰了
-                                《重差》 9 问，列千《九章算术》之末。唐代李淳风等
-                                人为国子监明算科选定数学教科书，便把《重差》 与《九章算
-                                术》分离，另行单本。因其第 1 问为“今有望海岛······",便把
-                                《重差》更名为《海岛算经》。从此，《海岛算经》即成为十部算经
-                                之一。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="463 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/463BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                463 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国的祖冲之算出了圆周率的近似值到第七位小数，这比西方早了一千多年。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="466  BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/466BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                466 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国三国时期的《张邱建算经》成书。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="550 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/550BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                550 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国南北朝的甄鸾撰《五草算经》、《五经算经》、《算术记遗》。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="600 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/600BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                600 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国六朝时，中国的祖日恒
-                                提出祖氏定律：若二立体等高处的截面积相等，则二者体积相等。西方直到十七世纪才发现同一定律，称为卡瓦列利原理。隋代《皇极历法》内，已用“内插法”来计算日、月的正确位置。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="620 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/620BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                620 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国唐朝的王孝通著《辑古算经》，解决了大规模土方工程中提出的三次方程求正根的问题。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="656 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/656BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                656 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国唐代李淳风等奉旨著《“十部算经”注释》，作为国子监算学馆的课本。
-                                “十部算经”指：《周髀》《九章算术》《海岛算经》《张邱建算经》《五经算术》等。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1019 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1019BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1019 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国唐朝开元年间，僧一行编成《大衍历》，建立了不等距的内插公式。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="727 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/727BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                727 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国北宋的刘益著《议古根源》，提出了“正负开方术”。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1050 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1050BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1050 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国宋朝的贾宪在《黄帝九章算术细草》中，创造了开任意高次幂的
-                                “增乘开方法”，并列出了二项式定理系数表，这是现代
-                                “组合数学”的早期发现。后人所称的“杨辉三角”
-                                即指此法。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1093 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1093BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1093 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国宋朝的沈括在《梦溪笔谈》中提出
-                                “隙积术” 和 “ 会圆术”
-                                ，开始高阶等差级数的研究。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1247 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1247BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1247 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国宋朝的秦九韶著《数书九章》共十八卷，推广了“
-                                增乘开方法”
-                                。书中提出的联立一次同余式的解法，比西方早五百七十余年。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1248 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1248BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1248 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国宋朝的李治著《测圆海镜》十二卷，这是第一部系统论述
-                                “天元术” 的著作。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1261 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1261BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1261 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国宋朝的杨辉著《详解九章算法》，用
-                                “垛积术” 求出几类高阶等差级数之和。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1274 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1274BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1274 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国宋朝的杨辉发表《乘除通变本末》，叙述
-                                “九归”
-                                捷法，介绍了筹算乘除的各种运算法。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1280 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1280BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1280 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                元朝《授时历》用招差法编制日月的方位表
-                                (中国 王恂、郭守敬等) 。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1303 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1303BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1303 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国元朝的朱世杰著《四元玉鉴》三卷，把“天元术”推广为“四元术”
-                                。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-text="1450 BC">
-                        <div class="timeline__content">
-                            <img
-                                class="timeline__img"
-                                src="./image/timeline/1450BC.png"
-                            />
-                            <h2 class="timeline__content-title">
-                                1450 BC
-                            </h2>
-                            <p class="timeline__content-desc">
-                                中国开始应用珠算盘，并逐渐代替了筹算
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-futrue">
-                        未来的故事还在继续...
+    <!-- timeline part -->
+    <div class="main-content">
+        <div class="timeline-container" id="timeline-1">
+            <div class="timeline">
+                <div class="timeline-item" data-text="4000 AC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="image/timeline/4000BC.png" />
+                        <h2 class="timeline__content-title">
+                            4000 AC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国西安半坡的陶器上出现数字刻符。半坡陶符是中国新石器时代一种接近文字形式的符号，在西安半坡遗址出土。出土陶器和陶片上刻画的符号共有27种。这些陶符，还在陕西宝鸡北首岭、长安五楼、郃阳莘野、铜川李家沟和临潼姜寨、零口、垣头等仰韶文化遗址中发现。
+                        </p>
                     </div>
                 </div>
+                <div class="timeline-item" data-text="2700 AC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/2700BC.png" />
+                        <h2 class="timeline__content-title">
+                            2700 AC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国黄帝时代传说隶首做算数之说，大挠发明了甲子。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="2500 AC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/2500BC.png" />
+                        <h2 class="timeline__content-title">
+                            2500 AC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            据中国战国时尸佼著《尸子》记载：
+                            “古者，陲 ( 注：传说为黄帝或尧时人)
+                            为规、矩、准、绳，使天下仿焉”。这相当于在已有“
+                            圆，方、平、直”等形的概念。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="2100 AC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/2100BC.png" />
+                        <h2 class="timeline__content-title">
+                            2100 AC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国夏朝出现象征吉祥的河图洛书纵横图，即为
+                            “ 九宫算 ” ，这被认为是现代 “ 组合数学 ”
+                            最古老的发现。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1400 AC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1400BC.png" />
+                        <h2 class="timeline__content-title">
+                            1400 AC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国殷代甲骨文卜辞记录已有十进制记数，最大数字是三万。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="400 AC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/400BC.png" />
+                        <h2 class="timeline__content-title">
+                            400 AC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国战国时期的《墨经》中记载了一些几何学的义理。战国时期的中国，筹算成为当时的主要计算方法；出现《庄子》、《考工记》记载中的极限概念、分数运算法、特殊角度概念及对策论的例证。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="170 AC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/170AC.png" />
+                        <h2 class="timeline__content-title">
+                            170 AC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            湖北出现竹简算书《算数书》。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="100 AC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/100BC.png" />
+                        <h2 class="timeline__content-title">
+                            100 AC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国的《周髀算经》发表。其中阐述了“盖天说”
+                            和四分历法，使用分数算法和开方法等。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="50 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/50BC.png" />
+                        <h2 class="timeline__content-title">
+                            50 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            继西汉张苍、耿寿昌删补校订之后，东汉时纂编成
+                            《九章算术》
+                            ，这是中国最早的数学专著，收集了246
+                            个问题的解法。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="300 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/300BC-1.png" />
+                        <h2 class="timeline__content-title">
+                            300 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            魏晋时期，中国的赵爽在《勾股圆方图注》中列出了关于直角三角形三边之间关系的命题共21 条。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="300 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/300BC-2.png" />
+                        <h2 class="timeline__content-title">
+                            300 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            刘徽割圆术是建立在圆面积论的基础之上的。他首先论证，将圆分割成多边形，分割来越细，多边形的边数越多，多边形的面积就和圆面积没有差别了。他说，将6边形一边的长度乘以圆半径，再乘3，得12边形的面积。将12边形的一边长乘半径，再乘6，得24边形面积。越割越细，多边形和圆面积的差越小。如此割了再割，最后终于和圆合为一体，毫无差别了。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="300 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/300BC-3.png" />
+                        <h2 class="timeline__content-title">
+                            300 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            刘徽著《海岛算经》，论述了有关测量和计算海岛的距离、高度的方法。刘徽结合古代重差术编撰了
+                            《重差》 9 问，列千《九章算术》之末。唐代李淳风等
+                            人为国子监明算科选定数学教科书，便把《重差》 与《九章算
+                            术》分离，另行单本。因其第 1 问为“今有望海岛······",便把
+                            《重差》更名为《海岛算经》。从此，《海岛算经》即成为十部算经
+                            之一。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="463 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/463BC.png" />
+                        <h2 class="timeline__content-title">
+                            463 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国的祖冲之算出了圆周率的近似值到第七位小数，这比西方早了一千多年。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="466  BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/466BC.png" />
+                        <h2 class="timeline__content-title">
+                            466 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国三国时期的《张邱建算经》成书。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="550 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/550BC.png" />
+                        <h2 class="timeline__content-title">
+                            550 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国南北朝的甄鸾撰《五草算经》、《五经算经》、《算术记遗》。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="600 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/600BC.png" />
+                        <h2 class="timeline__content-title">
+                            600 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国六朝时，中国的祖日恒
+                            提出祖氏定律：若二立体等高处的截面积相等，则二者体积相等。西方直到十七世纪才发现同一定律，称为卡瓦列利原理。隋代《皇极历法》内，已用“内插法”来计算日、月的正确位置。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="620 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/620BC.png" />
+                        <h2 class="timeline__content-title">
+                            620 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国唐朝的王孝通著《辑古算经》，解决了大规模土方工程中提出的三次方程求正根的问题。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="656 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/656BC.png" />
+                        <h2 class="timeline__content-title">
+                            656 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国唐代李淳风等奉旨著《“十部算经”注释》，作为国子监算学馆的课本。
+                            “十部算经”指：《周髀》《九章算术》《海岛算经》《张邱建算经》《五经算术》等。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1019 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1019BC.png" />
+                        <h2 class="timeline__content-title">
+                            1019 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国唐朝开元年间，僧一行编成《大衍历》，建立了不等距的内插公式。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="727 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/727BC.png" />
+                        <h2 class="timeline__content-title">
+                            727 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国北宋的刘益著《议古根源》，提出了“正负开方术”。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1050 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1050BC.png" />
+                        <h2 class="timeline__content-title">
+                            1050 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国宋朝的贾宪在《黄帝九章算术细草》中，创造了开任意高次幂的
+                            “增乘开方法”，并列出了二项式定理系数表，这是现代
+                            “组合数学”的早期发现。后人所称的“杨辉三角”
+                            即指此法。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1093 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1093BC.png" />
+                        <h2 class="timeline__content-title">
+                            1093 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国宋朝的沈括在《梦溪笔谈》中提出
+                            “隙积术” 和 “ 会圆术”
+                            ，开始高阶等差级数的研究。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1247 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1247BC.png" />
+                        <h2 class="timeline__content-title">
+                            1247 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国宋朝的秦九韶著《数书九章》共十八卷，推广了“
+                            增乘开方法”
+                            。书中提出的联立一次同余式的解法，比西方早五百七十余年。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1248 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1248BC.png" />
+                        <h2 class="timeline__content-title">
+                            1248 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国宋朝的李治著《测圆海镜》十二卷，这是第一部系统论述
+                            “天元术” 的著作。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1261 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1261BC.png" />
+                        <h2 class="timeline__content-title">
+                            1261 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国宋朝的杨辉著《详解九章算法》，用
+                            “垛积术” 求出几类高阶等差级数之和。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1274 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1274BC.png" />
+                        <h2 class="timeline__content-title">
+                            1274 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国宋朝的杨辉发表《乘除通变本末》，叙述
+                            “九归”
+                            捷法，介绍了筹算乘除的各种运算法。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1280 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1280BC.png" />
+                        <h2 class="timeline__content-title">
+                            1280 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            元朝《授时历》用招差法编制日月的方位表
+                            (中国 王恂、郭守敬等) 。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1303 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1303BC.png" />
+                        <h2 class="timeline__content-title">
+                            1303 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国元朝的朱世杰著《四元玉鉴》三卷，把“天元术”推广为“四元术”
+                            。
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="1450 BC">
+                    <div class="timeline__content">
+                        <img class="timeline__img" src="./image/timeline/1450BC.png" />
+                        <h2 class="timeline__content-title">
+                            1450 BC
+                        </h2>
+                        <p class="timeline__content-desc">
+                            中国开始应用珠算盘，并逐渐代替了筹算
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-futrue">
+                    未来的故事还在继续...
+                </div>
             </div>
+        </div>
 
         <!-- footer part -->
         <div>
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba( 200, 220, 255,0.7)" />
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(	196, 209, 247,0.5)" />
-            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(	80, 94, 171,0.3)" />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(59,68,109)" />
-            </g>
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba( 200, 220, 255,0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(	196, 209, 247,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(	80, 94, 171,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(59,68,109)" />
+                </g>
             </svg>
         </div>
         <div class="content flex-p wave-p">
-                <p class="wave-p"> Design by Napstablook </p>
+            <p class="wave-p"> Design by Napstablook </p>
         </div>
 
         <!-- bobble part -->
@@ -636,26 +564,27 @@
         </div>
 
         <!-- background part -->
-        <div id="particles-js"></div> 
+        <div id="particles-js"></div>
 
-    </body>
+</body>
 
 <script>
-const loading = {
-    container: document.querySelector(".loading"),
-    in(target) {
-        this.container.classList.remove("loading_out");
-        setTimeout(() => {
-        window.location.href = target;
-        }, 1500)
-    },
-    out() {
-        this.container.classList.add("loading_out");
-    }
-};
-window.addEventListener("load", () => {
-    loading.out();
-})
+    const loading = {
+        container: document.querySelector(".loading"),
+        in(target) {
+            this.container.classList.remove("loading_out");
+            setTimeout(() => {
+                window.location.href = target;
+            }, 1500)
+        },
+        out() {
+            this.container.classList.add("loading_out");
+        }
+    };
+    window.addEventListener("load", () => {
+        loading.out();
+    })
 
 </script>
+
 </html>

@@ -1,4 +1,5 @@
 let round = 0;
+let model = null; 
 
 const canvas = document.querySelector('.webgl')
 const scene = new THREE.Scene()
@@ -45,14 +46,26 @@ renderer.outputEncoding = THREE.sRGBEncoding
 
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/');
-loader.load('scene.gltf', function (gltf)  {
-        const model = gltf.scene
+loader.load('算盘.gltf', function (gltf)  {
+        model = gltf.scene
         // model.traverse( child => child.material = bakedMaterial )
         scene.add(model)
-		scene.position.set(0,-0,0)
-        model.scale.set(20, 20, 20)
-        const light = new THREE.AmbientLight(0x404040, 2); // 柔和的白光
-        scene.add( light );
+		scene.position.set(0,-.3,0)
+        model.scale.set(20, 18, 18)
+
+        // 创建一个矩形光源
+        const rectLight1 = new THREE.RectAreaLight(0x404040, 2, 200, 200);
+        rectLight1.position.set(0, 10, 0);
+        rectLight1.lookAt(0, 0, 0);
+        scene.add(rectLight1);
+
+        const rectLight2 = new THREE.RectAreaLight(0x404040, .5, 40, 40);
+        rectLight2.position.set(0, -10, 0);
+        rectLight2.lookAt(0, 0, 0);
+        scene.add(rectLight2);
+
+        // const light = new THREE.AmbientLight(0x404040, 2); // 柔和的白光
+        // scene.add( light );
     }
 )
 
@@ -76,7 +89,9 @@ const tick = () => {
     // camera.position.z = Math.cos(round) * 20;
     // camera.position.y = Math.cos(round) * 10;
     controls.update()
-	// controls.target.clamp( minPan, maxPan )
+    if (model) { 
+        model.rotation.y += 0.001; 
+    }    
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
 }

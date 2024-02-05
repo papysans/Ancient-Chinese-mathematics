@@ -7,9 +7,24 @@ function changeColor() {
         document.documentElement.style.setProperty('--headline-color', '#BEBEBE');
         document.documentElement.style.setProperty('--text-color', '#BEBEBE');
         button.textContent = '隐藏文字';
+        localStorage.setItem('textState', 'visible');
     } else {
         document.documentElement.style.setProperty('--headline-color', 'transparent');
         document.documentElement.style.setProperty('--text-color', 'transparent');
         button.textContent = '显示文字';
+        localStorage.setItem('textState', 'hidden');
     }
 }
+
+window.onload = function() {
+    var textState = localStorage.getItem('textState');
+    if (textState === 'hidden') {
+        document.documentElement.style.setProperty('--headline-color', 'transparent');
+        document.documentElement.style.setProperty('--text-color', 'transparent');
+        document.getElementById('change-button').textContent = '显示文字';
+    } else {
+        document.documentElement.style.setProperty('--headline-color', '#BEBEBE');
+        document.documentElement.style.setProperty('--text-color', '#BEBEBE');
+        document.getElementById('change-button').textContent = '隐藏文字';
+    }
+};

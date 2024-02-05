@@ -1,5 +1,5 @@
 let round = 0 ;
-
+let model = null; 
 
 const canvas = document.querySelector('.webgl')
 const scene = new THREE.Scene()
@@ -39,9 +39,9 @@ renderer.outputEncoding = THREE.sRGBEncoding
 const loader = new THREE.GLTFLoader().setPath('../../model/');
 loader.load('铜尺.gltf', function (gltf)  {
     THREE.RectAreaLightUniformsLib.init();
-    const model = gltf.scene
+    model = gltf.scene
 
-    const texture = textureLoader.load('../../model/1/材质.jpg');
+    const texture = textureLoader.load('../../model/铜尺_resources/材质.jpg');
     
     // Materials
     texture.wrapS = THREE.RepeatWrapping;
@@ -89,6 +89,9 @@ const tick = () => {
     // const offsetZ = Math.cos(round) * 20;
     // controls.target.set(offsetX, camera.position.y, offsetZ);
     controls.update()
+    if (model) { 
+        model.rotation.y += 0.001; 
+    } 
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
 }
