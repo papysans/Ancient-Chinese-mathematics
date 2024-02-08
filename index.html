@@ -14,6 +14,7 @@
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
+    
     <link rel="stylesheet" href="./src/homepage/home-page.css" />
     <link rel="stylesheet" href="./src/homepage/footer.css" />
     <link rel="stylesheet" href="./src/public/loading.css">
@@ -22,7 +23,9 @@
     <link rel="stylesheet" href="./src/public/background.css">
     <link rel="stylesheet" href="./src/public/font.css">
     <link rel="stylesheet" href="./src/public/background-index.css">
+
     <script type="module" src="./src/homepage/home-page.js"></script>
+    <script type="text/javascript" src="./src/timeline/timelineData.js"></script>
     <!-- <script type="module" id="model-script" src="./src/homepage/model-1.js"></script> -->
     <!-- <script type="module" id="model-script" src="./src/homepage/model-2.js"></script> -->
     <!-- <script type="module" id="model-script" src="./src/homepage/model-3.js"></script> -->
@@ -32,6 +35,7 @@
     <script type="text/javascript" src="./src/timeline/timeline.js"></script>
     <script type="text/javascript" src="./src/public/background.js"></script>
     <script type="text/javascript" src="./src/homepage/hide-text.js"></script>
+
 </head>
 
 <body>
@@ -75,6 +79,8 @@
                 <label class="tab" for="radio-2" >算盘</label>
                 <input type="radio" id="radio-3" name="tabs" />
                 <label class="tab" for="radio-3" >圆规</label>
+                <!-- <input type="radio" id="radio-4" name="tabs" />
+                <label class="tab" for="radio-4" >圆规</label> -->
                 <span class="glider"></span>
             </div>
         </div>
@@ -84,7 +90,8 @@
     <!-- timeline part -->
     <div class="main-content">
         <div class="timeline-container" id="timeline-1">
-            <div class="timeline">
+            <!--
+            <div class="timeline" id="timelineData">
                 <div class="timeline-item" data-text="4000 AC">
                     <div class="timeline__content">
                         <img class="timeline__img" src="image/timeline/4000BC.png" />
@@ -95,6 +102,9 @@
                             中国西安半坡的陶器上出现数字刻符。半坡陶符是中国新石器时代一种接近文字形式的符号，在西安半坡遗址出土。出土陶器和陶片上刻画的符号共有27种。这些陶符，还在陕西宝鸡北首岭、长安五楼、郃阳莘野、铜川李家沟和临潼姜寨、零口、垣头等仰韶文化遗址中发现。
                         </p>
                     </div>
+                </div>
+                <div class="timeline-futrue">
+                    未来的故事还在继续...
                 </div>
                 <div class="timeline-item" data-text="2700 AC">
                     <div class="timeline__content">
@@ -437,8 +447,9 @@
                     未来的故事还在继续...
                 </div>
             </div>
+            -->
         </div>
-
+    </div>
         <!-- footer part -->
         <div>
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

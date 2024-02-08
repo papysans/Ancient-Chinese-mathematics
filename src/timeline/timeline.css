@@ -68,10 +68,10 @@
   opacity: 0;
   right: calc(-100% - 56px);
 }
-.timeline-item:nth-child(even) {
+.timeline:nth-child(even) .timeline-item {
   align-self: flex-end;
 }
-.timeline-item:nth-child(even):before {
+.timeline:nth-child(even) .timeline-item:before {
   right: auto;
   text-align: right;
   left: calc(-100% - 56px);

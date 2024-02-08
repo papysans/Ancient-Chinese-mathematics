@@ -1,0 +1,302 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var timelineContainer = document.getElementById('timeline-1');
+    timelineData.forEach(function (item) {
+        var timelineItem = document.createElement('div');
+        timelineItem.className = 'timeline-item';
+        timelineItem.dataset.text = item.date;
+        timelineItem.innerHTML = `
+        <div class="timeline__content">
+            <img class="timeline__img" src="${item.image}" />
+            <h2 class="timeline__content-title">${item.date}</h2>
+            <p class="timeline__content-desc">${item.description}</p>
+        </div>
+        `;
+
+        var timelineWrapper = document.createElement('div');
+        timelineWrapper.className = 'timeline';
+        timelineWrapper.id = 'timelineData';
+        timelineWrapper.appendChild(timelineItem);
+
+        timelineContainer.appendChild(timelineWrapper);
+    });
+
+    var futureDiv = document.createElement('div');
+    futureDiv.className = 'timeline-future';
+    futureDiv.innerHTML = '未来的故事还在继续...';
+    futureDiv.style.fontSize = '40px';
+    futureDiv.style.fontFamily = '"HarmonyOS_Sans_SC_Medium"';
+    futureDiv.style.textAlign = 'center';
+    futureDiv.style.padding = '100px 0';
+    futureDiv.style.color = '#ffb2b2'; 
+
+    timelineContainer.appendChild(futureDiv);
+});
+
+var timelineData = [
+    {
+        "date": "夏朝",
+        "image": "./image/timeline/2100BC.png",
+        "description": "中国夏朝出现象征吉祥的河图洛书纵横图，即为“九宫算”，这被认为是现代“组合数学”最古老的发现。"
+    },
+    {
+        "date": "商朝",
+        "image": "./image/timeline/1400BC.png",
+        "description": "中国殷代甲骨文卜辞记录已有十进制记数，最大数字是三万。"
+    },
+    {
+        "date": "战国",
+        "image": "./image/timeline/400BC.png",
+        "description": "中国战国时期的《墨经》中记载了一些几何学的义理。战国时期的中国，筹算成为当时的主要计算方法；出现《庄子》、《考工记》记载中的极限概念、分数运算法、特殊角度概念及对策论的例证。"
+    },
+    {
+        "date": "西汉",
+        "image": "./image/timeline/170AC.png",
+        "description": "湖北出现竹简算书《算数书》。"
+    },
+    {
+        "date": "西汉",
+        "image": "./image/timeline/100BC.png",
+        "description": "中国的《周髀算经》发表。其中阐述了“盖天说”和四分历法，使用分数算法和开方法等。"
+    },
+    {
+        "date": "西汉",
+        "image": "./image/timeline/50BC.png",
+        "description": "继西汉张苍、耿寿昌删补校订之后，东汉时纂编成《九章算术》，这是中国最早的数学专著，收集了246个问题的解法。"
+    },
+    {
+        "date": "魏晋时期",
+        "image": "./image/timeline/300BC-1.png",
+        "description": "魏晋时期，中国的赵爽在《勾股圆方图注》中列出了关于直角三角形三边之间关系的命题共21条。"
+    },
+    {
+        "date": "魏晋时期",
+        "image": "./image/timeline/300BC-2.png",
+        "description": "刘徽割圆术是建立在圆面积论的基础之上的。他首先论证，将圆分割成多边形，分割来越细，多边形的边数越多，多边形的面积就和圆面积没有差别了。"
+    },
+    {
+        "date": "魏晋时期",
+        "image": "./image/timeline/300BC-3.png",
+        "description": "刘徽著《海岛算经》，论述了有关测量和计算海岛的距离、高度的方法。刘徽结合古代重差术编撰了《重差》9问，列千《九章算术》之末。唐代李淳风等人为国子监明算科选定数学教科书，便把《重差》与《九章算术》分离，另行单本。因其第1问为：今有望海岛······,便把《重差》更名为《海岛算经》。从此，《海岛算经》即成为十部算经之一。"
+    },
+    {
+        "date": "南北朝时期",
+        "image": "./image/timeline/463BC.png",
+        "description": "中国的祖冲之算出了圆周率的近似值到第七位小数，这比西方早了一千多年。"
+    },
+    {
+        "date": "三国时期",
+        "image": "./image/timeline/466BC.png",
+        "description": "中国三国时期的《张邱建算经》成书。"
+    },
+    {
+        "date": "南北朝时期",
+        "image": "./image/timeline/550BC.png",
+        "description": "中国南北朝的甄鸾撰《五草算经》、《五经算经》、《算术记遗》。"
+    },
+    {
+        "date": "六朝时期",
+        "image": "./image/timeline/600BC.png",
+        "description": "中国六朝时，中国的祖日恒提出祖氏定律：若二立体等高处的截面积相等，则二者体积相等。西方直到十七世纪才发现同一定律，称为卡瓦列利原理。隋代《皇极历法》内，已用“内插法”来计算日、月的正确位置。"
+    },
+    {
+        "date": "唐朝",
+        "image": "./image/timeline/620BC.png",
+        "description": "中国唐朝的王孝通著《辑古算经》，解决了大规模土方工程中提出的三次方程求正根的问题。"
+    },
+    {
+        "date": "唐代",
+        "image": "./image/timeline/656BC.png",
+        "description": "中国唐代李淳风等奉旨著《“十部算经”注释》，作为国子监算学馆的课本。“十部算经”指：《周髀》《九章算术》《海岛算经》《张邱建算经》《五经算术》等。"
+    },
+    {
+        "date": "唐朝",
+        "image": "./image/timeline/1019BC.png",
+        "description": "中国唐朝开元年间，僧一行编成《大衍历》，建立了不等距的内插公式。"
+    },
+    {
+        "date": "宋朝",
+        "image": "./image/timeline/727BC.png",
+        "description": "中国北宋的刘益著《议古根源》，提出了“正负开方术”。"
+    },
+    {
+        "date": "宋朝",
+        "image": "./image/timeline/1050BC.png",
+        "description": "中国宋朝的贾宪在《黄帝九章算术细草》中，创造了开任意高次幂的“增乘开方法”，并列出了二项式定理系数表，这是现代“组合数学”的早期发现。后人所称的“杨辉三角”即指此法。"
+    },
+    {
+        "date": "宋朝",
+        "image": "./image/timeline/1093BC.png",
+        "description": "中国宋朝的沈括在《梦溪笔谈》中提出“隙积术”和“会圆术”，开始高阶等差级数的研究。"
+    },
+    {
+        "date": "宋朝",
+        "image": "./image/timeline/1247BC.png",
+        "description": "中国宋朝的秦九韶著《数书九章》共十八卷，推广了“增乘开方法”。书中提出的联立一次同余式的解法，比西方早五百七十余年。"
+    },
+    {
+        "date": "宋朝",
+        "image": "./image/timeline/1248BC.png",
+        "description": "中国宋朝的李治著《测圆海镜》十二卷，这是第一部系统论述“天元术”的著作。"
+    },
+    {
+        "date": "宋朝",
+        "image": "./image/timeline/1261BC.png",
+        "description": "中国宋朝的杨辉著《详解九章算法》，用“垛积术”求出几类高阶等差级数之和。"
+    },
+    {
+        "date": "宋朝",
+        "image": "./image/timeline/1274BC.png",
+        "description": "中国宋朝的杨辉发表《乘除通变本末》，叙述“九归”捷法，介绍了筹算乘除的各种运算法。"
+    },
+    {
+        "date": "元朝",
+        "image": "./image/timeline/1280BC.png",
+        "description": "元朝《授时历》用招差法编制日月的方位表(中国 王恂、郭守敬等)。"
+    },
+    {
+        "date": "元朝",
+        "image": "./image/timeline/1303BC.png",
+        "description": "中国元朝的朱世杰著《四元玉鉴》三卷，把“天元术”推广为“四元术”。"
+    },
+    {
+        "date": "明朝",
+        "image": "./image/timeline/1450BC.png",
+        "description": "中国开始应用珠算盘，并逐渐代替了筹算。"
+    }
+];
+
+/*
+var timelineData = [
+    // date:AC or BC
+    {
+        "date": "2100 AC",
+        "image": "./image/timeline/2100BC.png",
+        "description": "中国夏朝出现象征吉祥的河图洛书纵横图，即为“ 九宫算 ” ，这被认为是现代 “ 组合数学 ”最古老的发现。"
+    },
+    {
+        "date": "1400 AC",
+        "image": "./image/timeline/1400BC.png",
+        "description": "中国殷代甲骨文卜辞记录已有十进制记数，最大数字是三万。"
+    },
+    {
+        "date": "400 AC",
+        "image": "./image/timeline/400BC.png",
+        "description": "中国战国时期的《墨经》中记载了一些几何学的义理。战国时期的中国，筹算成为当时的主要计算方法；出现《庄子》、《考工记》记载中的极限概念、分数运算法、特殊角度概念及对策论的例证。"
+    },
+    {
+        "date": "170 AC",
+        "image": "./image/timeline/170AC.png",
+        "description": "湖北出现竹简算书《算数书》。"
+    },
+    {
+        "date": "100 AC",
+        "image": "./image/timeline/100BC.png",
+        "description": "中国的《周髀算经》发表。其中阐述了“盖天说”和四分历法，使用分数算法和开方法等。"
+    },
+    {
+        "date": "50 BC",
+        "image": "./image/timeline/50BC.png",
+        "description": "继西汉张苍、耿寿昌删补校订之后，东汉时纂编成《九章算术》，这是中国最早的数学专著，收集了246个问题的解法。"
+    },
+    {
+        "date": "300 BC",
+        "image": "./image/timeline/300BC-1.png",
+        "description": "魏晋时期，中国的赵爽在《勾股圆方图注》中列出了关于直角三角形三边之间关系的命题共21条。"
+    },
+    {
+        "date": "300 BC",
+        "image": "./image/timeline/300BC-2.png",
+        "description": "刘徽割圆术是建立在圆面积论的基础之上的。他首先论证，将圆分割成多边形，分割来越细，多边形的边数越多，多边形的面积就和圆面积没有差别了。他说，将6边形一边的长度乘以圆半径，再乘3，得12边形的面积。将12边形的一边长乘半径，再乘6，得24边形面积。越割越细，多边形和圆面积的差越小。如此割了再割，最后终于和圆合为一体，毫无差别了。"
+    },
+    {
+        "date": "300 BC",
+        "image": "./image/timeline/300BC-3.png",
+        "description": "刘徽著《海岛算经》，论述了有关测量和计算海岛的距离、高度的方法。刘徽结合古代重差术编撰了《重差》9问，列千《九章算术》之末。唐代李淳风等人为国子监明算科选定数学教科书，便把《重差》与《九章算术》分离，另行单本。因其第1问为：今有望海岛······,便把《重差》更名为《海岛算经》。从此，《海岛算经》即成为十部算经之一。"
+    },
+    {
+        "date": "463 BC",
+        "image": "./image/timeline/463BC.png",
+        "description": "中国的祖冲之算出了圆周率的近似值到第七位小数，这比西方早了一千多年。"
+    },
+    {
+        "date": "466 BC",
+        "image": "./image/timeline/466BC.png",
+        "description": "中国三国时期的《张邱建算经》成书。"
+    },
+    {
+        "date": "550 BC",
+        "image": "./image/timeline/550BC.png",
+        "description": "中国南北朝的甄鸾撰《五草算经》、《五经算经》、《算术记遗》。"
+    },
+    {
+        "date": "600 BC",
+        "image": "./image/timeline/600BC.png",
+        "description": "中国六朝时，中国的祖日恒提出祖氏定律：若二立体等高处的截面积相等，则二者体积相等。西方直到十七世纪才发现同一定律，称为卡瓦列利原理。隋代《皇极历法》内，已用“内插法”来计算日、月的正确位置。"
+    },
+    {
+        "date": "620 BC",
+        "image": "./image/timeline/620BC.png",
+        "description": "中国唐朝的王孝通著《辑古算经》，解决了大规模土方工程中提出的三次方程求正根的问题。"
+    },
+    {
+        "date": "656 BC",
+        "image": "./image/timeline/656BC.png",
+        "description": "中国唐代李淳风等奉旨著《“十部算经”注释》，作为国子监算学馆的课本。“十部算经”指：《周髀》《九章算术》《海岛算经》《张邱建算经》《五经算术》等。"
+    },
+    {
+        "date": "1019 BC",
+        "image": "./image/timeline/1019BC.png",
+        "description": "中国唐朝开元年间，僧一行编成《大衍历》，建立了不等距的内插公式。"
+    },
+    {
+        "date": "727 BC",
+        "image": "./image/timeline/727BC.png",
+        "description": "中国北宋的刘益著《议古根源》，提出了“正负开方术”。"
+    },
+    {
+        "date": "1050 BC",
+        "image": "./image/timeline/1050BC.png",
+        "description": "中国宋朝的贾宪在《黄帝九章算术细草》中，创造了开任意高次幂的“增乘开方法”，并列出了二项式定理系数表，这是现代“组合数学”的早期发现。后人所称的“杨辉三角”即指此法。"
+    },
+    {
+        "date": "1093 BC",
+        "image": "./image/timeline/1093BC.png",
+        "description": "中国宋朝的沈括在《梦溪笔谈》中提出“隙积术”和“会圆术”，开始高阶等差级数的研究。"
+    },
+    {
+        "date": "1247 BC",
+        "image": "./image/timeline/1247BC.png",
+        "description": "中国宋朝的秦九韶著《数书九章》共十八卷，推广了“增乘开方法”。书中提出的联立一次同余式的解法，比西方早五百七十余年。"
+    },
+    {
+        "date": "1248 BC",
+        "image": "./image/timeline/1248BC.png",
+        "description": "中国宋朝的李治著《测圆海镜》十二卷，这是第一部系统论述“天元术”的著作。"
+    },
+    {
+        "date": "1261 BC",
+        "image": "./image/timeline/1261BC.png",
+        "description": "中国宋朝的杨辉著《详解九章算法》，用“垛积术”求出几类高阶等差级数之和。"
+    },
+    {
+        "date": "1274 BC",
+        "image": "./image/timeline/1274BC.png",
+        "description": "中国宋朝的杨辉发表《乘除通变本末》，叙述“九归”捷法，介绍了筹算乘除的各种运算法。"
+    },
+    {
+        "date": "1280 BC",
+        "image": "./image/timeline/1280BC.png",
+        "description": "元朝《授时历》用招差法编制日月的方位表(中国 王恂、郭守敬等)。"
+    },
+    {
+        "date": "1303 BC",
+        "image": "./image/timeline/1303BC.png",
+        "description": "中国元朝的朱世杰著《四元玉鉴》三卷，把“天元术”推广为“四元术”。"
+    },
+    {
+        "date": "1450 BC",
+        "image": "./image/timeline/1450BC.png",
+        "description": "中国开始应用珠算盘，并逐渐代替了筹算。"
+    }
+];
+*/

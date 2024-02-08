@@ -173,7 +173,7 @@ input[type="radio"] {
   font-size: 1.1rem;
   border-radius: 15px;
   cursor: pointer;
-  transition: color 0.15s ease-in;
+  transition: color 0.01s ease-in;
   color:#3f3f3f;
 }
 
@@ -196,6 +196,10 @@ input[id="radio-2"]:checked~.glider {
 
 input[id="radio-3"]:checked~.glider {
   transform: translateX(200%);
+}
+
+input[id="radio-4"]:checked~.glider {
+  transform: translateX(300%);
 }
 
 .glider {
