@@ -45,8 +45,8 @@ renderer.outputEncoding = THREE.sRGBEncoding
 // const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
 //Loader
-const loader = new THREE.GLTFLoader().setPath('../../model/');
-loader.load('圆规.gltf', function (gltf)  {
+const loader = new THREE.GLTFLoader().setPath('../../model/圆规精简版/');
+loader.load('圆规精简版.gltf', function (gltf)  {
         model = gltf.scene
         // model.traverse( child => child.material = bakedMaterial )
         scene.add(model)

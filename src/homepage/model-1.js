@@ -46,7 +46,7 @@ loader.load('铜尺.gltf', function (gltf)  {
     // Materials
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set(30,30);
+    texture.repeat.set(20,20);
     model.traverse((child) => {
         if (child.isMesh) {
             child.material.map = texture;

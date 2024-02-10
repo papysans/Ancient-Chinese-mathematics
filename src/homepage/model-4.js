@@ -1,0 +1,99 @@
+let round = 0;
+let model = null; 
+
+const canvas = document.querySelector('.webgl')
+const scene = new THREE.Scene()
+const textureLoader = new THREE.TextureLoader()
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
+
+// Base camera
+const camera = new THREE.PerspectiveCamera(10, sizes.width / sizes.height, 0.1, 100)
+camera.position.x = 12
+camera.position.y = 4
+camera.position.z = 15
+scene.add(camera)
+
+//Controls
+const controls = new THREE.OrbitControls(camera, canvas)
+controls.enableDamping = true
+controls.enableZoom =false
+controls.enablePan = true
+// controls.minDistance = 21
+// controls.maxDistance = 50
+// controls.minPolarAngle = Math.PI / 5
+// controls.maxPolarAngle = Math.PI / 2
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    antialias: true,
+    alpha: true
+})
+
+renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.outputEncoding = THREE.sRGBEncoding
+
+// // Materials
+// const bakedTexture = textureLoader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/47b05e2db4e49eec33d63729e920894a906cb693/static/baked.jpg')
+// bakedTexture.flipY = false
+// bakedTexture.encoding = THREE.sRGBEncoding
+
+// const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
+
+//Loader
+const loader = new THREE.GLTFLoader().setPath('../../model/度量衡/');
+loader.load('度量衡.gltf', function (gltf)  {
+        model = gltf.scene
+        // model.traverse( child => child.material = bakedMaterial )
+        scene.add(model)
+		scene.position.set(0,-.8, 0)
+        model.scale.set(150, 150, 150)
+
+        // 创建一个矩形光源
+        const rectLight1 = new THREE.RectAreaLight(0x404040, 4, 200, 200);
+        rectLight1.position.set(0, 10, 0);
+        rectLight1.lookAt(0, 0, 0);
+        scene.add(rectLight1);
+
+        const rectLight2 = new THREE.RectAreaLight(0x404040, .5, 40, 40);
+        rectLight2.position.set(0, -10, 0);
+        rectLight2.lookAt(0, 0, 0);
+        scene.add(rectLight2);
+
+        // const light = new THREE.AmbientLight(0x404040, 2); // 柔和的白光
+        // scene.add( light );
+    }
+)
+
+window.addEventListener('resize', () =>
+{
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
+// Animation
+
+var minPan = new THREE.Vector3( -2, -.5, -2 )
+var maxPan = new THREE.Vector3( 2, .5, 2 )
+
+const tick = () => {
+    // round += 0.0015;
+    // camera.position.x = Math.sin(round) * 20;
+    // camera.position.z = Math.cos(round) * 20;
+    // camera.position.y = Math.cos(round) * 10;
+    controls.update()
+    if (model) { 
+        model.rotation.y += 0.001; 
+    }
+    renderer.render(scene, camera)
+    window.requestAnimationFrame(tick)
+}
+
+tick()

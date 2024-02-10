@@ -10,6 +10,9 @@ window.onload = function() {
   } else if (loadScript === '2') {
     script.src = './src/homepage/model-3.js';
     localStorage.setItem('loadScript', '3');
+  } else if (loadScript === '3') {
+    script.src = './src/homepage/model-4.js'; 
+    localStorage.setItem('loadScript', '4'); 
   } else {
     script.src = './src/homepage/model-1.js';
     localStorage.setItem('loadScript', '1');
