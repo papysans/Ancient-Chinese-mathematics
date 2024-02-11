@@ -1,3 +1,4 @@
+
 let round = 0 ;
 let model = null; 
 
@@ -34,6 +35,9 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 
+// AxesHelper
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
 
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/');
@@ -46,6 +50,9 @@ loader.load('铜尺.gltf', function (gltf)  {
     // Materials
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
+    texture.flipY = false
+    texture.encoding = THREE.sRGBEncoding
+
     texture.repeat.set(20,20);
     model.traverse((child) => {
         if (child.isMesh) {
@@ -59,7 +66,7 @@ loader.load('铜尺.gltf', function (gltf)  {
     model.rotation.x = THREE.Math.degToRad(-5);
 
     // 创建一个矩形光源
-    const rectLight1 = new THREE.RectAreaLight(0x6e8378, 2, 200, 200);
+    const rectLight1 = new THREE.RectAreaLight(0x6e8378, 2, 2000, 2000);
     rectLight1.position.set(0, 10, 0);
     rectLight1.lookAt(0, 0, 0);
     scene.add(rectLight1);
@@ -68,6 +75,15 @@ loader.load('铜尺.gltf', function (gltf)  {
     rectLight2.position.set(0, -10, 0);
     rectLight2.lookAt(0, 0, 0);
     scene.add(rectLight2);
+    
+    const rectLight3 = new THREE.RectAreaLight(0xffffff, 20, 200, 200);
+    rectLight2.position.set(50, 50, 50);
+    rectLight2.lookAt(0, 0, 0);
+    scene.add(rectLight3);
+
+    //PointLightHelper
+    // const lightHelper1 = new RectAreaLightHelper(rectLight1);
+    // scene.add(lightHelper1);
 
 })
 

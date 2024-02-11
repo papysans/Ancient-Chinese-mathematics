@@ -44,6 +44,10 @@ renderer.outputEncoding = THREE.sRGBEncoding
 
 // const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
+// AxesHelper
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
+
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/算盘精简版/');
 loader.load('算盘精简版.gltf', function (gltf)  {
@@ -66,6 +70,10 @@ loader.load('算盘精简版.gltf', function (gltf)  {
 
         // const light = new THREE.AmbientLight(0x404040, 2); // 柔和的白光
         // scene.add( light );
+
+            // PointLightHelper
+    const lightHelper1 = new THREE.PointLightHelper(rectLight1);
+    scene.add(lightHelper1);
     }
 )
 
