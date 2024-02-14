@@ -23,11 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var futureDiv = document.createElement('div');
     futureDiv.className = 'timeline-future';
     futureDiv.innerHTML = '未来的故事还在继续...';
-    futureDiv.style.fontSize = '40px';
-    futureDiv.style.fontFamily = '"HarmonyOS_Sans_SC_Medium"';
-    futureDiv.style.textAlign = 'center';
-    futureDiv.style.padding = '100px 0';
-    futureDiv.style.color = '#ffb2b2'; 
+    // futureDiv.style.fontSize = '40px';
+    // futureDiv.style.fontFamily = '"HarmonyOS_Sans_SC_Medium"';
+    // futureDiv.style.textAlign = 'center';
+    // futureDiv.style.padding = '100px 0';
+    // futureDiv.style.color = '#ffb2b2'; 
+    // futureDiv.style.zIndex = '6'; 
 
     timelineContainer.appendChild(futureDiv);
 });

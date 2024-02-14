@@ -1,6 +1,11 @@
 :root {
   --headline-color: #BEBEBE;
   --text-color: #BEBEBE;
+  --background-color: #3f3f3f;
+  --tab-button-bg-color: #bebebee8;
+  --tab-button-bg-color-hover: #ffb2b2ea;
+  --tab-button-font-color: #3f3f3f;
+  --tab-button-font-color-hover: #ffffff;
 }
 
 html,
@@ -29,7 +34,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #3f3f3f;
+  background: var(--background-color);
 }
 
 .headline-container {
@@ -63,7 +68,7 @@ body {
 }
 
 #text-behind-blur {
-  color: var(--headlicne-color);
+  color: var(--headline-color);
 
   filter: blur(7.5px);
   -webkit-filter: blur(7.5px);
@@ -95,7 +100,7 @@ body {
 body {
   overflow: hidden;
   cursor: grab;
-  background-color: #3f3f3f;
+  /* background-color: #3f3f3f; */
 }
 
 
@@ -113,8 +118,8 @@ body {
   top:90vh;
   position: relative;
   z-index: 5;
-  background-color: #bebebee8;
-  color: #3f3f3f;
+  background-color: var(--tab-button-bg-color);
+  color: var(--tab-button-font-color);
   font-family: "HarmonyOS_Sans_SC_Medium";
   letter-spacing: 1px;
   border: none;
@@ -131,8 +136,8 @@ body {
 }
 
 #change-button:hover {
-  background-color: #ffb2b2ea;
-  color: #ffffff;
+  background-color: var(--tab-button-bg-color-hover);
+  color: var(--tab-button-font-color-hover);
 }
 
 .container {
@@ -150,7 +155,7 @@ body {
 .tabs {
   display: flex;
   position: relative;
-  background-color: #bebebee8;
+  background-color: var(--tab-button-bg-color);
   box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
   padding: 0.5rem;
   border-radius: 15px;
@@ -174,16 +179,16 @@ input[type="radio"] {
   border-radius: 15px;
   cursor: pointer;
   transition: color 0.01s ease-in;
-  color:#3f3f3f;
+  color:var(--tab-button-font-color);
 }
 
 input[type="radio"]:checked+label {
-  color: #ffffff;
+  color: var(--tab-button-font-color-hover);
 }
 
 input[type="radio"]:checked+label>.notification {
   background-color: var(--primary-color);
-  color: #3f3f3f;
+  color: var(--tab-button-font-color);
 }
 
 input[id="radio-1"]:checked~.glider {
@@ -202,12 +207,16 @@ input[id="radio-4"]:checked~.glider {
   transform: translateX(300%);
 }
 
+input[id="radio-5"]:checked~.glider {
+  transform: translateX(400%);
+}
+
 .glider {
   position: absolute;
   display: flex;
   height: 4vh;
   width: 200px;
-  background-color: #ffb2b2af;
+  background-color: var(--tab-button-bg-color-hover);
   z-index: 5;
   border-radius:10px;
   transition: 0.25s ease-out;

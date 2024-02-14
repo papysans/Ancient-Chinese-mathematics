@@ -1,3 +1,5 @@
+var headlineColor = getComputedStyle(document.documentElement).getPropertyValue('--headline-color').trim();
+
 function changeColor() {
     var headlineColor = getComputedStyle(document.documentElement).getPropertyValue('--headline-color').trim();
     var textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim();

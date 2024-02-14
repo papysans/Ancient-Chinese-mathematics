@@ -38,6 +38,9 @@ function loadModel(option) {
         case '3':
             newScript.src = './src/homepage/model-4.js';
             break;
+        case '4':
+            newScript.src = './src/homepage/model-5.js';
+            break;
     }
     document.head.appendChild(newScript);
 }

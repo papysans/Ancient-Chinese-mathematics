@@ -13,6 +13,9 @@ window.onload = function() {
   } else if (loadScript === '3') {
     script.src = './src/homepage/model-4.js'; 
     localStorage.setItem('loadScript', '4'); 
+  } else if (loadScript === '4') {
+    script.src = './src/homepage/model-5.js'; 
+    localStorage.setItem('loadScript', '5'); 
   } else {
     script.src = './src/homepage/model-1.js';
     localStorage.setItem('loadScript', '1');
