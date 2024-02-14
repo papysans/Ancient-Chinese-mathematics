@@ -1,9 +1,9 @@
 :root{
-  --content-title-color: #BEBEBE;
-  --content-desc-color: #bebebee2;
-  --line-color: #ffb2b24a;
-  --item-color: #ffb2b281;
-  --item-import-color: #ffb2b281;
+  --content-title-color: #e7e7e7;
+  --content-desc-color: #e7e7e7e2;
+  --line-color: #fae2a14a;
+  --item-color: #fae2a1be;
+  --item-import-color: #fae2a1be;
   --mask-color: rgba(99, 99, 99, 0.9);
   --future-color: #ffb2b2;
 }

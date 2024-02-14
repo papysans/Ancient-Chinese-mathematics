@@ -6,8 +6,8 @@ function changeColor() {
     var button = document.getElementById('change-button');
 
     if (headlineColor === 'transparent' && textColor === 'transparent') {
-        document.documentElement.style.setProperty('--headline-color', '#BEBEBE');
-        document.documentElement.style.setProperty('--text-color', '#BEBEBE');
+        document.documentElement.style.setProperty('--headline-color', '#E7E7E7');
+        document.documentElement.style.setProperty('--text-color', '#E7E7E7');
         button.textContent = '隐藏文字';
         localStorage.setItem('textState', 'visible');
     } else {
@@ -25,8 +25,8 @@ window.onload = function() {
         document.documentElement.style.setProperty('--text-color', 'transparent');
         document.getElementById('change-button').textContent = '显示文字';
     } else {
-        document.documentElement.style.setProperty('--headline-color', '#BEBEBE');
-        document.documentElement.style.setProperty('--text-color', '#BEBEBE');
+        document.documentElement.style.setProperty('--headline-color', '#E7E7E7');
+        document.documentElement.style.setProperty('--text-color', '#E7E7E7');
         document.getElementById('change-button').textContent = '隐藏文字';
     }
 };
