@@ -1,6 +1,5 @@
 
 let round = 0 ;
-let model = null; 
 
 const canvas = document.querySelector('.webgl')
 const scene = new THREE.Scene()
@@ -20,9 +19,10 @@ scene.add(camera)
 //Controls
 const controls = new THREE.OrbitControls(camera, canvas)
 controls.enableDamping = true
-controls.enableZoom =false
+controls.enableZoom = false
 controls.enablePan = true
-
+controls.autoRotate = true; 
+controls.autoRotateSpeed = 1.0; 
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
@@ -36,14 +36,14 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 
 // AxesHelper
-// const axesHelper = new THREE.AxesHelper(5);
-// scene.add(axesHelper);
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
 
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/');
 loader.load('铜尺.gltf', function (gltf)  {
     THREE.RectAreaLightUniformsLib.init();
-    model = gltf.scene
+    let model = gltf.scene
 
     const texture = textureLoader.load('../../model/铜尺_resources/材质.jpg');
     
@@ -104,10 +104,9 @@ const tick = () => {
     // const offsetX = Math.sin(round) * 20;
     // const offsetZ = Math.cos(round) * 20;
     // controls.target.set(offsetX, camera.position.y, offsetZ);
+
     controls.update()
-    if (model) { 
-        model.rotation.y += 0.001; 
-    } 
+    
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
 }

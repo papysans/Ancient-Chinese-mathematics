@@ -8,6 +8,17 @@
   --future-color: #ffb2b2;
 }
 
+.dark{
+  --content-title-color: #e7e7e7;
+  --content-desc-color: #e7e7e7e2;
+  --line-color: #ffb2b24a;
+  --item-color: #ffb2b2be;
+  --item-import-color: #ffb2b2be;
+  --mask-color: rgba(99, 99, 99, 0.9);
+  --future-color: #ffb2b2;
+
+}
+
 .timeline {
   display: flex;
   margin: 0 auto;

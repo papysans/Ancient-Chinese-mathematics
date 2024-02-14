@@ -3,7 +3,17 @@
   --text-color: #BEBEBE;
   --background-color: #3f3f3f;
   --tab-button-bg-color: #bebebee8;
-  --tab-button-bg-color-hover: #fae2a1ea;
+  --tab-button-bg-color-hover: rgb(141, 141, 141);
+  --tab-button-font-color: #3f3f3f;
+  --tab-button-font-color-hover: #ffffff;
+}
+
+.dark {
+  --headline-color: #BEBEBE;
+  --text-color: #BEBEBE;
+  --background-color: #3f3f3f;
+  --tab-button-bg-color: #bebebee8;
+  --tab-button-bg-color-hover: #ffb2b2ea;
   --tab-button-font-color: #3f3f3f;
   --tab-button-font-color-hover: #ffffff;
 }
@@ -21,8 +31,8 @@ body {
 
 .canvas-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  /* top: 50%; */
+  /* left: 50%; */
   transform: translate(-50%, -50%);
   z-index: 3;
 }

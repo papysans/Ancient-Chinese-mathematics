@@ -51,5 +51,5 @@
 
 setTimeout(() => {
     $("#timeline-1").timeline();
-}, 10);
+}, 100);
 
