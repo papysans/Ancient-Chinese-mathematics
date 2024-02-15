@@ -47,12 +47,12 @@ const axesHelper = new THREE.AxesHelper(5);
 scene.add(axesHelper);
 
 //Loader
-const loader = new THREE.GLTFLoader().setPath('../../model/圆规精简版/');
-loader.load('圆规精简版.gltf', function (gltf)  {
+const loader = new THREE.GLTFLoader().setPath('../../model/圆规/');
+loader.load('圆规.gltf', function (gltf)  {
         model = gltf.scene
         scene.add(model)
         scene.position.set(0,0,0)
-		model.position.set(.5,-1.5,0)
+		model.position.set(.5,-1.3,0)
         model.scale.set(45, 45, 45)
 
         // 创建一个矩形光源
