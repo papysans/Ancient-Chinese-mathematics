@@ -46,14 +46,18 @@ renderer.outputEncoding = THREE.sRGBEncoding
 
 // const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/度量衡/');
 loader.load('度量衡.gltf', function (gltf)  {
         model = gltf.scene
         // model.traverse( child => child.material = bakedMaterial )
         scene.add(model)
-		scene.position.set(0,-.8, 0)
-        model.scale.set(150, 150, 150)
+		scene.position.set(0, 0, 0)
+        model.position.set(0,-1, 0)
+
+        model.scale.set(180, 180, 180)
 
         // 创建一个矩形光源
         const rectLight1 = new THREE.RectAreaLight(0x404040, 4, 200, 200);

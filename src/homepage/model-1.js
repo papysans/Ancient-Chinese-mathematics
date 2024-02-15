@@ -39,6 +39,19 @@ renderer.outputEncoding = THREE.sRGBEncoding
 const axesHelper = new THREE.AxesHelper(5);
 scene.add(axesHelper);
 
+// Lights
+const rectLight1 = new THREE.RectAreaLight(0x6e8378, 2, 2000, 2000);
+rectLight1.position.set(0, 10, 0);
+rectLight1.lookAt(0, 0, 0);
+
+const rectLight2 = new THREE.RectAreaLight(0x7b9286, .5, 40, 40);
+rectLight2.position.set(0, -10, 0);
+rectLight2.lookAt(0, 0, 0);
+
+const rectLight3 = new THREE.RectAreaLight(0xffffff, 20, 200, 200);
+rectLight2.position.set(50, 50, 50);
+rectLight2.lookAt(0, 0, 0);
+
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/');
 loader.load('铜尺.gltf', function (gltf)  {
@@ -60,25 +73,20 @@ loader.load('铜尺.gltf', function (gltf)  {
         }
     });
     scene.add(model)
-    scene.position.set(.5,-1,0)
+    scene.position.set(0,0,0)
+    model.position.set(.5,-1,0)
     model.scale.set(200, 200, 200)
     model.rotation.z = THREE.Math.degToRad(45);
     model.rotation.x = THREE.Math.degToRad(-5);
 
     // 创建一个矩形光源
-    const rectLight1 = new THREE.RectAreaLight(0x6e8378, 2, 2000, 2000);
-    rectLight1.position.set(0, 10, 0);
-    rectLight1.lookAt(0, 0, 0);
+
     scene.add(rectLight1);
 
-    const rectLight2 = new THREE.RectAreaLight(0x7b9286, .5, 40, 40);
-    rectLight2.position.set(0, -10, 0);
-    rectLight2.lookAt(0, 0, 0);
+
     scene.add(rectLight2);
     
-    const rectLight3 = new THREE.RectAreaLight(0xffffff, 20, 200, 200);
-    rectLight2.position.set(50, 50, 50);
-    rectLight2.lookAt(0, 0, 0);
+
     scene.add(rectLight3);
 
     //PointLightHelper
@@ -100,11 +108,19 @@ window.addEventListener('resize', () =>
 
 
 const tick = () => {
-    // round += 0.0015;
-    // const offsetX = Math.sin(round) * 20;
-    // const offsetZ = Math.cos(round) * 20;
-    // controls.target.set(offsetX, camera.position.y, offsetZ);
 
+    // 更新角度
+    round += 0.005;
+
+    // 计算新的 x 和 z 坐标
+    const x = 50 * Math.cos(-round);
+    const z = 50 * Math.sin(-round);
+
+    // 更新 rectLight3 的位置
+    rectLight3.position.set(x, 50, z);
+
+    // 让 rectLight3 一直看向原点
+    rectLight3.lookAt(0, 0, 0);
     controls.update()
     
     renderer.render(scene, camera)

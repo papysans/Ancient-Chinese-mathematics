@@ -39,20 +39,20 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 
-// // Materials
-// const bakedTexture = textureLoader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/47b05e2db4e49eec33d63729e920894a906cb693/static/baked.jpg')
-// bakedTexture.flipY = false
-// bakedTexture.encoding = THREE.sRGBEncoding
+ // Materials
 
-// const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
+
+// AxesHelper
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
 
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/圆规精简版/');
 loader.load('圆规精简版.gltf', function (gltf)  {
         model = gltf.scene
-        // model.traverse( child => child.material = bakedMaterial )
         scene.add(model)
-		scene.position.set(0,-1.5,-.5)
+        scene.position.set(0,0,0)
+		model.position.set(.5,-1.5,0)
         model.scale.set(45, 45, 45)
 
         // 创建一个矩形光源
@@ -91,9 +91,6 @@ const tick = () => {
     // camera.position.z = Math.cos(round) * 20;
     // camera.position.y = Math.cos(round) * 10;
     controls.update()
-    if (model) { 
-        model.rotation.y += 0.001; 
-    }
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
 }

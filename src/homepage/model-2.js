@@ -47,8 +47,8 @@ renderer.outputEncoding = THREE.sRGBEncoding
 // const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
 // AxesHelper
-// const axesHelper = new THREE.AxesHelper(5);
-// scene.add(axesHelper);
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
 
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/算盘精简版/');
@@ -56,7 +56,8 @@ loader.load('算盘精简版.gltf', function (gltf)  {
         model = gltf.scene
         // model.traverse( child => child.material = bakedMaterial )
         scene.add(model)
-		scene.position.set(0,-.3,0)
+		scene.position.set(0,0,0)
+        model.position.set(0,-.3,0)
         model.scale.set(20, 18, 18)
 
         // 创建一个矩形光源

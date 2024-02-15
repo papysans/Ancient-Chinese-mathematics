@@ -53,8 +53,10 @@ loader.load('称.gltf', function (gltf)  {
         model = gltf.scene
         // model.traverse( child => child.material = bakedMaterial )
         scene.add(model)
-		scene.position.set(0, 0, 0)
-        model.scale.set(10, 10, 10)
+		scene.position.set(0,0,0)
+        model.position.set(0, -1.8, 1)
+        model.scale.set(15000, 15000, 15000)
+        model.rotation.x = THREE.Math.degToRad(-15);
 
         // 创建一个矩形光源
         const rectLight1 = new THREE.RectAreaLight(0x404040, 4, 200, 200);
@@ -92,9 +94,7 @@ const tick = () => {
     // camera.position.z = Math.cos(round) * 20;
     // camera.position.y = Math.cos(round) * 10;
     controls.update()
-    if (model) { 
-        model.rotation.y += 0.001; 
-    }
+
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
 }
