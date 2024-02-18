@@ -1,0 +1,195 @@
+* {
+	font-family: PWChalk;	
+}
+
+body {	
+	background: #888;	
+	z-index: -1;
+}
+
+
+
+.container-flex {	
+	margin: 10px auto;
+	width: 815px;
+	height: 80vh;
+}
+
+#abacus{
+	width: 100%;
+	height: 82%;
+	margin-bottom: 10px;
+}
+
+/*----- Abacus layout ------*/
+
+#framework {	
+	background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/wood.JPG");
+    background-size: 80px 60px;
+	background-repeat: repeat;
+	height: 100%;
+	width: 100%;
+	padding: 1px;
+	/* border: 5px solid #2C1910; */
+	border-radius: 20px;
+}
+
+#upper-row {		
+	margin: 25px auto 0;	
+	height: 25%;
+	width: 95%;
+	background-color: rgb(136, 136, 136);
+	/* background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/wood-background.jpg"); */
+    background-size: 80px 60px;
+	background-repeat: repeat;
+	/* border: 5px solid #2C1910; */
+	border-radius: 20px;
+}
+
+#lower-row {	
+	margin: 18px auto 0;	
+	height: 61%;
+	width: 95%;
+	background-color: rgb(136, 136, 136);
+
+	/* background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/wood-background.jpg"); */
+    background-size: 80px 60px;
+	background-repeat: repeat;
+	/* border: 5px solid #ff5100; */
+	border-radius: 20px;
+}
+
+.col-10 {
+	display: block;
+	float: left;
+	width: 10%;
+	height: 100%;
+	margin: 0;
+}
+
+
+/*------ abacus components ------*/
+
+.vertical-line {
+	width: 12%;
+	height: 101%;
+	background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/wood.JPG");
+
+	/* background-color: #888; */
+	border: 1px solid #000;
+	margin: 0 auto;
+	z-index: -1;
+}
+
+#framework {
+	float: left;
+}
+
+#framework img {
+	position: relative;		
+	width: 90%;
+	cursor: pointer;
+	left: 5%;
+}
+
+.balla{
+	bottom: 335px;
+}
+
+.ballb {
+	bottom: 200px;
+}
+
+.ball5 {
+	bottom: 90px;
+}
+
+.ball4 {
+	bottom: 220px;
+}
+
+.ball3 {
+	bottom: 245px;
+}
+
+.ball2 {
+	bottom: 275px;
+}
+
+.ball1 {
+	bottom: 305px;
+}
+
+/*------- operators and display layout -------*/
+
+
+#operators {	
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	height: 8vh;
+	background-color: rgb(159, 161, 162);
+	border: 2px solid #2C1910;
+	margin: 10px auto;
+	border-radius: 20px;
+	img{
+		margin:2px 0;
+	}
+}
+
+.operator-button {	
+	cursor: pointer;
+	width: auto;
+}
+
+/* #divide{
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg) ;
+} */
+
+#display {		
+	/* background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/blackboard.jpg"); */
+    background-size: 80px 40px;	
+	background-color: rgb(159, 161, 162);
+    border: 2px solid #2C1910;
+	border-radius: 20px;	
+	justify-content: center;
+	width: 100%;
+	height: 8vh;			
+}
+
+#display p {	
+	color: #b7b7b7;	
+	font-size: 2.6em;	
+	text-align: center;	
+	
+}
+
+/* footer {
+	font-family: "pacifico", cursive;
+  	color: #ffa500;
+	text-align: center;
+	margin-top: 15px;	
+}
+
+footer a {
+	font-family: "pacifico", cursive;
+  	color: #00aa00;
+	text-decoration: none;	
+	font-style: italic;
+} */
+
+/* #copyleft {
+	display: inline-block;
+	text-align: right;
+	margin: 0px;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+} */
