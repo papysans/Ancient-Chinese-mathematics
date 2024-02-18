@@ -1,16 +1,16 @@
 BALLS_INITIAL_POSITION = {
-	".ball5": "110px",
-	".ball4": "220px",
-	".ball3": "245px",
-	".ball2": "270px",
-	".ball1": "295px"
+	".ball5": "90px",
+	".ball4": "235px",
+	".ball3": "265px",
+	".ball2": "295px",
+	".ball1": "325px"
 };
 
 BALLS_SECOND_POSITION = {
-	".ball4": "280px",
-	".ball3": "305px",
-	".ball2": "330px",
-	".ball1": "355px"
+	".ball4": "300px",
+	".ball3": "330px",
+	".ball2": "360px",
+	".ball1": "390px"
 };
 
 
@@ -28,32 +28,39 @@ $(document).ready(function () {
 	var expression = "";
 
 	function move() {
+
 		if (numId == 5) {
-			if ($(imgId).css("bottom") === "110px") {
-				$(imgId).animate({ "bottom": "56px" }, 200);  // 添加动画效果
+			if ($(imgId).css("bottom") === "90px") {
+				$(imgId).animate({ "bottom": "56px" }, 200);
 				number += parseInt(numId) * Math.pow(10, idStr[3]);
 			} else {
-				$(imgId).animate({ "bottom": "110px" }, 200);  // 添加动画效果
+				$(imgId).animate({ "bottom": "90px" }, 200);
 				number -= parseInt(numId) * Math.pow(10, idStr[3]);
 			}
 		}
 
+
+
 		if ($(imgId).css("bottom") !== newBottomValue) {
 			for (var i = numId; i < 5; i++) {
+
 				imgId = "#" + idStr.slice(0, idStr.length - 1) + i;
 				baseBottomValue = BALLS_INITIAL_POSITION[".ball" + i];
 				newBottomValue = BALLS_SECOND_POSITION[".ball" + i];
+
 				if ($(imgId).css("bottom") !== newBottomValue) {
-					$(imgId).animate({ "bottom": newBottomValue }, 200);  // 添加动画效果
+					$(imgId).animate({ "bottom": newBottomValue }, 200);
 					number += Math.pow(10, idStr[3]);
 				}
 			}
 		} else {
 			for (var i = numId; i > 0; i--) {
+
 				imgId = "#" + idStr.slice(0, idStr.length - 1) + i;
 				baseBottomValue = BALLS_INITIAL_POSITION[".ball" + i];
+
 				if ($(imgId).css("bottom") !== baseBottomValue) {
-					$(imgId).animate({ "bottom": baseBottomValue }, 200);  // 添加动画效果
+					$(imgId).animate({ "bottom": baseBottomValue }, 200);
 					number -= Math.pow(10, idStr[3]);
 				}
 			}
@@ -69,7 +76,7 @@ $(document).ready(function () {
 		for (var i = 0; i < 11; i++) {
 			for (var j = 0; j < 6; j++) {
 				imgId = "#col" + i + "-" + j;
-				$(imgId).animate({ "bottom": BALLS_INITIAL_POSITION[".ball" + j] }, 100);  // 添加动画效果
+				$(imgId).css("bottom", BALLS_INITIAL_POSITION[".ball" + j]);
 			}
 		}
 		number = 0;
@@ -88,12 +95,12 @@ $(document).ready(function () {
 				if (parseInt(result[i]) > 4) {
 					counter += 5;
 					imgId = "#col" + i + "-5";
-					$(imgId).trigger('click');
+					$(imgId).css("bottom", "56px");
 				}
 				for (var j = 4; j > 0; j--) {
 					if (counter < parseInt(result[i])) {
 						imgId = "#col" + i + "-" + j;
-						$(imgId).trigger('click');
+						$(imgId).animate({ "bottom": BALLS_SECOND_POSITION[".ball" + j] }, 200);
 						counter += 1;
 					}
 				}
@@ -102,6 +109,7 @@ $(document).ready(function () {
 		$('#framework img').off("click");
 		$('#framework img').css("cursor", "default");
 		$('#operators .sing').css("cursor", "default");
+
 	}
 
 	function operation() {
@@ -157,7 +165,7 @@ $(document).ready(function () {
 					result = eval(expression.slice(0, -1))
 					$("#number").text(result);
 				} else {
-					result = eval(expression + number)
+					result = eval(eval(expression + number))
 					$("#number").text(result);
 				}
 				clean();
@@ -171,18 +179,20 @@ $(document).ready(function () {
 	$('#framework img').on({
 		'click': function () {
 			idStr = this.id;
-			let parts = idStr.split('-');  // 分割 id
-			let colNum = parseInt(parts[0].slice(3));  // 提取列编号
-			let ballNum = parseInt(parts[1]);  // 提取球编号
+			numId = idStr.slice(-1);
 			imgId = "#" + idStr;
 
-			baseBottomValue = BALLS_INITIAL_POSITION[".ball" + ballNum];
-			newBottomValue = BALLS_SECOND_POSITION[".ball" + ballNum];
+			baseBottomValue = BALLS_INITIAL_POSITION[".ball" + numId];
+			newBottomValue = BALLS_SECOND_POSITION[".ball" + numId];
 
 			move();
 			printNumber();
 		}
 	});
+
+
+
+
 
 	$('#operators img').on({
 		'click': function () {
