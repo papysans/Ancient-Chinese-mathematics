@@ -1,16 +1,16 @@
 BALLS_INITIAL_POSITION = {
-	".ball5": "90px",
-	".ball4": "235px",
-	".ball3": "265px",
-	".ball2": "295px",
-	".ball1": "325px"
+	".ball5": "100px",
+	".ball4": "225px",
+	".ball3": "255px",
+	".ball2": "285px",
+	".ball1": "315px"
 };
 
 BALLS_SECOND_POSITION = {
-	".ball4": "300px",
-	".ball3": "330px",
-	".ball2": "360px",
-	".ball1": "390px"
+	".ball4": "310px",
+	".ball3": "340px",
+	".ball2": "370px",
+	".ball1": "400px"
 };
 
 
@@ -30,11 +30,11 @@ $(document).ready(function () {
 	function move() {
 
 		if (numId == 5) {
-			if ($(imgId).css("bottom") === "90px") {
+			if ($(imgId).css("bottom") === "100px") {
 				$(imgId).animate({ "bottom": "56px" }, 200);
 				number += parseInt(numId) * Math.pow(10, idStr[3]);
 			} else {
-				$(imgId).animate({ "bottom": "90px" }, 200);
+				$(imgId).animate({ "bottom": "100px" }, 200);
 				number -= parseInt(numId) * Math.pow(10, idStr[3]);
 			}
 		}

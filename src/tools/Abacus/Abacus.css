@@ -1,16 +1,16 @@
-body {	
-	background: #888;	
+body {
+	background: #939393;
 	z-index: -1;
 	height: 100%;
 }
 
-.container-flex {	
+.container-flex {
 	margin: 10vh auto;
 	width: 815px;
 	height: 600px;
 }
 
-#abacus{
+#abacus {
 	width: 100%;
 	height: 82%;
 	margin-bottom: 10px;
@@ -18,37 +18,40 @@ body {
 
 /*----- Abacus layout ------*/
 
-#framework {	
-	background-image: url(../../../image/tools/wood.jpg);
-    background-size: 80px 60px;
+#framework {
+	/* background-image: url(../../../image/tools/wood.jpg); */
+	background-color: #e8c58e;
+	/* background-size: 80px 60px; */
 	background-repeat: repeat;
 	height: 100%;
 	width: 100%;
 	padding: 1px;
 	/* border: 5px solid #2C1910; */
 	border-radius: 20px;
+	border: #472901 5px solid;
 }
 
-#upper-row {		
-	margin: 25px auto 0;	
+#upper-row {
+	margin: 25px auto 0;
 	height: 25%;
-	width: 95%;
-	background-color: rgb(136, 136, 136);
+	width: 92%;
+	border: #472901 5px solid;
+	background-color: #939393;
 	/* background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/wood-background.jpg"); */
-    background-size: 80px 60px;
+	background-size: 80px 60px;
 	background-repeat: repeat;
 	/* border: 5px solid #2C1910; */
 	border-radius: 20px;
 }
 
-#lower-row {	
-	margin: 18px auto 0;	
-	height: 61%;
-	width: 95%;
-	background-color: rgb(136, 136, 136);
-
+#lower-row {
+	margin: 20px auto 0;
+	height: 60%;
+	width: 92%;
+	background-color: #939393;
+	border: #472901 5px solid;
 	/* background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/wood-background.jpg"); */
-    background-size: 80px 60px;
+	background-size: 80px 60px;
 	background-repeat: repeat;
 	/* border: 5px solid #ff5100; */
 	border-radius: 20px;
@@ -67,11 +70,11 @@ body {
 
 .vertical-line {
 	width: 12%;
-	height: 101%;
-	background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/wood.JPG");
-
-	/* background-color: #888; */
-	border: 1px solid #000;
+	height: 99%;
+	/* background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/wood.JPG"); */
+	background-color: rgb(232, 197, 142);
+	border: #472901 3px solid;
+	border-radius: 6px;
 	margin: 0 auto;
 	z-index: -1;
 }
@@ -81,14 +84,14 @@ body {
 }
 
 #framework img {
-	position: relative;		
+	position: relative;
 	width: 90%;
 	cursor: pointer;
 	left: 5%;
 }
 
-.balla{
-	bottom: 355px;
+.balla {
+	bottom: 345px;
 }
 
 .ballb {
@@ -96,29 +99,29 @@ body {
 }
 
 .ball5 {
-	bottom: 90px;
+	bottom: 100px;
 }
 
 .ball4 {
-	bottom: 235px;
+	bottom: 225px;
 }
 
 .ball3 {
-	bottom: 265px;
+	bottom: 255px;
 }
 
 .ball2 {
-	bottom: 295px;
+	bottom: 285px;
 }
 
 .ball1 {
-	bottom: 325px;
+	bottom: 315px;
 }
 
 /*------- operators and display layout -------*/
 
 
-#operators {	
+#operators {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -127,13 +130,15 @@ body {
 	background-color: rgb(159, 161, 162);
 	border: 2px solid #2C1910;
 	margin: 10px auto;
+	margin-top: 20px;
 	border-radius: 20px;
-	img{
-		margin:2px 0;
+
+	img {
+		margin: 2px 0;
 	}
 }
 
-.operator-button {	
+.operator-button {
 	cursor: pointer;
 	width: auto;
 }
@@ -145,48 +150,67 @@ body {
 	transform: rotate(45deg) ;
 } */
 
-#display {		
+#display {
 	/* background-image: url("https://raw.githubusercontent.com/Juankboards/abacus-calculator/master/img/blackboard.jpg"); */
-    /* background-size: 80px 40px;	 */
+	/* background-size: 80px 40px;	 */
 	display: flex;
 	background-color: rgb(159, 161, 162);
-    border: 2px solid #2C1910;
-	border-radius: 20px;	
+	border: 2px solid #2C1910;
+	border-radius: 20px;
 	justify-content: center;
 	width: 100%;
-	height: 8vh;			
+	height: 8vh;
 }
 
-#display p {	
-	color: #b7b7b7;	
-	font-size: 2.6em;	
-	text-align: center;	
+#display p {
+	color: #2C1910;
+	font-size: 2.6em;
+	text-align: center;
 	justify-content: center;
 	align-items: center;
-margin: auto;}
-
-/* footer {
-	font-family: "pacifico", cursive;
-  	color: #ffa500;
-	text-align: center;
-	margin-top: 15px;	
+	margin: auto;
 }
 
-footer a {
-	font-family: "pacifico", cursive;
-  	color: #00aa00;
-	text-decoration: none;	
-	font-style: italic;
-} */
+.block {
+	display: flex;
+}
 
-/* #copyleft {
-	display: inline-block;
-	text-align: right;
-	margin: 0px;
-	-moz-transform: scaleX(-1);
-	-o-transform: scaleX(-1);
-	-webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
-	filter: FlipH;
-	-ms-filter: "FlipH";
-} */
+.block img {
+	width: 100%;
+	height: 100%;
+}
+
+.common {
+	position: absolute;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 22%;
+	border-radius: 20px;
+	border: #2C1910 2px solid;
+	padding: 6px;
+	/* background: rgba(47, 47, 47, 0.5); */
+	/* box-shadow: inset 1.01px -1.01px 10px rgba(195, 195, 195, 0.17),
+		inset -2.01333px 2.01333px 2.01333px rgba(41, 41, 41, 0.39); */
+	/* backdrop-filter: blur(70px); */
+	/* padding: 20px 20px 30px; */
+}
+
+.addition {
+	top: 10vh;
+	left: 1vw;
+}
+
+.reduction {
+	top: 55vh;
+	left: 1vw;
+}
+
+.multiplication{
+	top: 10vh;
+	right: 1vw;
+}
+
+.division{
+	top: 55vh;
+	right: 1vw;
+}
