@@ -3,8 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>CodePen - A Pen by Juan Ruiz</title>
-	<!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'> -->
+	<title>算盘</title>
 	<link rel="stylesheet" href="./Abacus.css">
 	<link rel="stylesheet" href="../../public/menu.css">
 	<link rel="stylesheet" href="../../public/loading.css">
@@ -17,12 +16,12 @@
 
 	<div class="menu">
 		<li><a onclick="loading.in('../../../index.html')">首页</a></li>
+		<li class="active"><a onclick="loading.in('./Abacus.html')">中国数学工具</a></li>
 		<li><a onclick="loading.in('/src/books/books.html')">中国数学古籍</a></li>
 		<li><a onclick="loading.in('/src/mathematicians/mathematicians.html')">中国数学伟士</a></li>
 		<li><a onclick="loading.in('/src/about/about.html')">关于</a></li>
 	</div>
-	
-	<!-- partial:index.partial.html -->
+
 	<div class="container-flex">
 		<div id="abacus" class="container-flex">
 			<div id="framework">
@@ -44,32 +43,32 @@
 					</div>
 					<div class="col-10">
 						<div class="vertical-line"></div>
-						<img id="col6-5" class="ball5" src="../../../image/tools/top breds.png"> 
+						<img id="col6-5" class="ball5" src="../../../image/tools/top breds.png">
 						<img id="col9-a" class="ballb" src="../../../image/tools/top breds.png">
 					</div>
 					<div class="col-10">
 						<div class="vertical-line"></div>
-						<img id="col5-5" class="ball5" src="../../../image/tools/top breds.png"> 
+						<img id="col5-5" class="ball5" src="../../../image/tools/top breds.png">
 						<img id="col9-a" class="ballb" src="../../../image/tools/top breds.png">
 					</div>
 					<div class="col-10">
 						<div class="vertical-line"></div>
-						<img id="col4-5" class="ball5" src="../../../image/tools/top breds.png"> 
+						<img id="col4-5" class="ball5" src="../../../image/tools/top breds.png">
 						<img id="col9-a" class="ballb" src="../../../image/tools/top breds.png">
 					</div>
 					<div class="col-10">
 						<div class="vertical-line"></div>
-						<img id="col3-5" class="ball5" src="../../../image/tools/top breds.png"> 
+						<img id="col3-5" class="ball5" src="../../../image/tools/top breds.png">
 						<img id="col9-a" class="ballb" src="../../../image/tools/top breds.png">
 					</div>
 					<div class="col-10">
 						<div class="vertical-line"></div>
-						<img id="col2-5" class="ball5" src="../../../image/tools/top breds.png"> 
+						<img id="col2-5" class="ball5" src="../../../image/tools/top breds.png">
 						<img id="col9-a" class="ballb" src="../../../image/tools/top breds.png">
 					</div>
 					<div class="col-10">
 						<div class="vertical-line"></div>
-						<img id="col1-5" class="ball5" src="../../../image/tools/top breds.png"> 
+						<img id="col1-5" class="ball5" src="../../../image/tools/top breds.png">
 						<img id="col9-a" class="ballb" src="../../../image/tools/top breds.png">
 					</div>
 					<div class="col-10">
@@ -174,45 +173,84 @@
 			<p id="number">0</p>
 		</div>
 	</div>
-
+	<div class="container">
+		<div class="tabs">
+			<input type="radio" id="radio-1" name="tabs" checked />
+			<label class="tab" for="radio-1">新莽铜卡尺</label>
+			<input type="radio" id="radio-2" name="tabs" />
+			<label class="tab" for="radio-2">明朝十三挡算盘</label>
+			<input type="radio" id="radio-3" name="tabs" />
+			<label class="tab" for="radio-3">弹簧圆规</label>
+			<input type="radio" id="radio-4" name="tabs" />
+			<label class="tab" for="radio-4">秦度量衡</label>
+			<input type="radio" id="radio-5" name="tabs" />
+			<label class="tab" for="radio-5">秦称</label>
+			<span class="glider"></span>
+		</div>
+	</div>
 	<div class="block">
 		<div class="addition common">
-			<img src="../../../image/tools/+.gif">
+			<img src="../../../image/tools/加法.png">
 		</div>
 		<div class="reduction common">
-			<img src="../../../image/tools/-.gif">
+			<img src="../../../image/tools/减法.png">
 		</div>
 		<div class="multiplication common">
-			<img src="../../../image/tools/+.gif">
+			<img src="../../../image/tools/乘法.png">
 		</div>
 		<div class="division common">
-			<img src="../../../image/tools/+.gif">
+			<img src="../../../image/tools/除法.png">
 		</div>
 	</div>
 
-    <!-- loading part -->
+	<!-- loading part -->
 	<div class="loading">
 		<div id="load">
-		<div>3</div>
-		<div>.</div>
-		<div>1</div>
-		<div>4</div>
-		<div>1</div>
-		<div>5</div>
-		<div>9</div>
-		<div>2</div>
-		<div>6</div>
+			<div>3</div>
+			<div>.</div>
+			<div>1</div>
+			<div>4</div>
+			<div>1</div>
+			<div>5</div>
+			<div>9</div>
+			<div>2</div>
+			<div>6</div>
 		</div>
 	</div>
 </body>
 
 <script>
+
+// 获取所有的图片元素
+var gifs = document.querySelectorAll('.block img');
+
+// 创建一个对象数组，每个对象包含一个图片元素的静态和动态版本的 url
+var srcs = [
+	{ staticSrc: '../../../image/tools/加法.png', animatedSrc: '../../../image/tools/加法.gif' },
+	{ staticSrc: '../../../image/tools/减法.png', animatedSrc: '../../../image/tools/减法.gif' },
+	{ staticSrc: '../../../image/tools/乘法.png', animatedSrc: '../../../image/tools/乘法.gif' },
+	{ staticSrc: '../../../image/tools/除法.png', animatedSrc: '../../../image/tools/除法.gif' }
+];
+
+// 为每个图片元素添加事件监听器
+gifs.forEach(function(gif, index) {
+	// 监听鼠标 hover 事件
+	gif.addEventListener('mouseover', function() {
+		this.src = srcs[index].animatedSrc; // 播放 gif
+	});
+
+	// 监听鼠标移出事件
+	gif.addEventListener('mouseout', function() {
+		this.src = srcs[index].staticSrc; // 停止播放 gif
+	});
+});
+
 	const loading = {
 		container: document.querySelector(".loading"),
 		in(target) {
 			this.container.classList.remove("loading_out");
 			setTimeout(() => {
-			window.location.href = target;
+				window.location.href = target;
 			}, 1000)
 		},
 		out() {
@@ -223,4 +261,5 @@
 		loading.out();
 	})
 </script>
+
 </html>

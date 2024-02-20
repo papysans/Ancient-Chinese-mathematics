@@ -43,8 +43,8 @@ renderer.outputEncoding = THREE.sRGBEncoding
 
 
 // AxesHelper
-const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
+// const axesHelper = new THREE.AxesHelper(5);
+// scene.add(axesHelper);
 
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/圆规/');

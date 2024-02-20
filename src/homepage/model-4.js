@@ -46,8 +46,8 @@ renderer.outputEncoding = THREE.sRGBEncoding
 
 // const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 
-const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
+// const axesHelper = new THREE.AxesHelper(5);
+// scene.add(axesHelper);
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/度量衡/');
 loader.load('度量衡.gltf', function (gltf)  {

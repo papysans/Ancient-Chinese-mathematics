@@ -36,8 +36,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 
 // AxesHelper
-const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
+// const axesHelper = new THREE.AxesHelper(5);
+// scene.add(axesHelper);
 
 // Lights
 const rectLight1 = new THREE.RectAreaLight(0x6e8378, 2, 2000, 2000);

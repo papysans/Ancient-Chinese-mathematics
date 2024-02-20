@@ -115,6 +115,7 @@ $(document).ready(function () {
 	function operation() {
 		switch (idStr) {
 			case "clean":
+				$('#framework img').off('click');  // 移除所有点击事件
 				$('#framework img').css("cursor", "pointer");
 				$('#operators .sing').css("cursor", "pointer");
 				$('#framework img').on({

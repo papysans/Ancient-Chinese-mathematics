@@ -45,8 +45,8 @@ renderer.outputEncoding = THREE.sRGBEncoding
 // bakedTexture.encoding = THREE.sRGBEncoding
 
 // const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
-const axesHelper = new THREE.AxesHelper(10);
-scene.add(axesHelper);
+// const axesHelper = new THREE.AxesHelper(10);
+// scene.add(axesHelper);
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/称/');
 loader.load('称.gltf', function (gltf)  {
