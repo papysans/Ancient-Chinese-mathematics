@@ -13,6 +13,21 @@
 	<script src="./Caliper.js"></script>
 </head>
 <body>
+	    <!-- loading part -->
+		<div class="loading">
+			<div id="load">
+				<div>3</div>
+				<div>.</div>
+				<div>1</div>
+				<div>4</div>
+				<div>1</div>
+				<div>5</div>
+				<div>9</div>
+				<div>2</div>
+				<div>6</div>
+			</div>
+		</div>
+		
     <div class="menu">
 		<li><a onclick="loading.in('../../../index.html')">千秋岁月</a></li>
 		<li class="active"><a onclick="loading.in('./Abacus.html')">天工开物</a></li>
@@ -30,13 +45,31 @@
     <div class="container">
 		<div class="tabs">
 			<input type="radio" id="radio-1" name="tabs" checked/>
-			<label class="tab" for="radio-1">卡尺</label>
+			<label class="tab" for="radio-1" onclick="loading.in('./Caliper.html')">卡尺</label>
 			<input type="radio" id="radio-2" name="tabs" />
-			<label class="tab" for="radio-2">算盘</label>
+			<label class="tab" for="radio-2" onclick="loading.in('../Abacus/Abacus.html')">算盘</label>
 			<input type="radio" id="radio-3" name="tabs" />
-			<label class="tab" for="radio-3">圆规</label>
+			<label class="tab" for="radio-3" >圆规</label>
 			<span class="glider"></span>
 		</div>
 	</div>
 </body>
+
+<script>
+    const loading = {
+        container: document.querySelector(".loading"),
+        in(target) {
+            this.container.classList.remove("loading_out");
+            setTimeout(() => {
+                window.location.href = target;
+            }, 1500)
+        },
+        out() {
+            this.container.classList.add("loading_out");
+        }
+    };
+    window.addEventListener("load", () => {
+        loading.out();
+    })
+</script>
 </html>
