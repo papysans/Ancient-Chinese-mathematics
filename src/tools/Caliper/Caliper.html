@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡尺</title>
+    <link rel="stylesheet" href="./Caliper.css">
+	<link rel="stylesheet" href="../../public/menu.css">
+	<link rel="stylesheet" href="../../public/loading.css">
+
+	<script src='../../public/reference/jquery.min.js'></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="./Caliper.js"></script>
+</head>
+<body>
+    <div class="menu">
+		<li><a onclick="loading.in('../../../index.html')">千秋岁月</a></li>
+		<li class="active"><a onclick="loading.in('./Abacus.html')">天工开物</a></li>
+		<li><a onclick="loading.in('/src/books/books.html')">璇玑藏书</a></li>
+		<li><a onclick="loading.in('/src/mathematicians/mathematicians.html')">名人志士</a></li>
+		<li><a onclick="loading.in('/src/about/about.html')">千里之行</a></li>
+	</div>
+
+    <div class="caliper">
+        <div id="caliperBottom"><img  src="../../../image/tools/铜尺下.png" ></div>
+		<div id="caliperMiddle"><img src="../../../image/tools/铜尺中.png" ></div> 
+        <div id="caliperTop"><img src="../../../image/tools/铜尺上.png"></div> 
+    </div>
+	<div id="dragLength">长度:0px</div>
+    <div class="container">
+		<div class="tabs">
+			<input type="radio" id="radio-1" name="tabs" checked/>
+			<label class="tab" for="radio-1">卡尺</label>
+			<input type="radio" id="radio-2" name="tabs" />
+			<label class="tab" for="radio-2">算盘</label>
+			<input type="radio" id="radio-3" name="tabs" />
+			<label class="tab" for="radio-3">圆规</label>
+			<span class="glider"></span>
+		</div>
+	</div>
+</body>
+</html>
