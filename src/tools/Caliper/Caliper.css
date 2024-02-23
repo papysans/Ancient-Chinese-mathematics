@@ -54,9 +54,10 @@ body {
     border: #3f3f3f 2px solid;
     padding: 2vh 10vw;
     border-radius: 1vw;
-    font-family: HarmonyOS_Sans_SC_Medium;
+    font-family: "HarmonyOS_Sans_SC_Medium";
     font-weight: bold;
 }
+
 .container {
 	position: fixed;
 	bottom: 10px;
