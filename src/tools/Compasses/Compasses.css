@@ -43,7 +43,7 @@ body{
 .circle {
     position: absolute;
     top: 50%;
-    left: 75%;
+    left: 80%;
     transform: translate(-50%, -50%);
     width: 10vw;
     height: 10vw;
