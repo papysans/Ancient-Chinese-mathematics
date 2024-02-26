@@ -85,14 +85,14 @@ var timelineData = [
         "description": "中国的祖冲之算出了圆周率的近似值到第七位小数，这比西方早了一千多年。"
     },
     {
-        "date": "南北朝时期",
-        "image": "./image/timeline/550BC.png",
-        "description": "中国南北朝的甄鸾撰《五草算经》、《五经算经》、《算术记遗》。"
-    },
-    {
         "date": "三国时期",
         "image": "./image/timeline/466BC.png",
         "description": "中国三国时期的《张邱建算经》成书。"
+    },
+    {
+        "date": "南北朝时期",
+        "image": "./image/timeline/550BC.png",
+        "description": "中国南北朝的甄鸾撰《五草算经》、《五经算经》、《算术记遗》。"
     },
     {
         "date": "六朝时期",
@@ -105,7 +105,7 @@ var timelineData = [
         "description": "中国唐朝的王孝通著《辑古算经》，解决了大规模土方工程中提出的三次方程求正根的问题。"
     },
     {
-        "date": "唐朝",
+        "date": "唐代",
         "image": "./image/timeline/656BC.png",
         "description": "中国唐代李淳风等奉旨著《“十部算经”注释》，作为国子监算学馆的课本。“十部算经”指：《周髀》《九章算术》《海岛算经》《张邱建算经》《五经算术》等。"
     },
