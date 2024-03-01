@@ -29,7 +29,7 @@ body{
 
 .radius {
     position:absolute;
-    top:50%;
+    top:30%;
     left: 20%;
     transform: translate(-50%, -50%);
     font-size: 1.5rem;

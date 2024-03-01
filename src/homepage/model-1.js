@@ -1,4 +1,3 @@
-
 let round = 0 ;
 
 const canvas = document.querySelector('.webgl')
@@ -52,6 +51,10 @@ const rectLight3 = new THREE.RectAreaLight(0xffffff, 20, 200, 200);
 rectLight2.position.set(50, 50, 50);
 rectLight2.lookAt(0, 0, 0);
 
+scene.add(rectLight1);
+scene.add(rectLight2);
+scene.add(rectLight3);
+
 //Loader
 const loader = new THREE.GLTFLoader().setPath('../../model/');
 loader.load('铜尺.gltf', function (gltf)  {
@@ -59,7 +62,6 @@ loader.load('铜尺.gltf', function (gltf)  {
     let model = gltf.scene
 
     const texture = textureLoader.load('../../model/铜尺_resources/材质.jpg');
-    
     // Materials
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
@@ -78,21 +80,6 @@ loader.load('铜尺.gltf', function (gltf)  {
     model.scale.set(200, 200, 200)
     model.rotation.z = THREE.Math.degToRad(45);
     model.rotation.x = THREE.Math.degToRad(-5);
-
-    // 创建一个矩形光源
-
-    scene.add(rectLight1);
-
-
-    scene.add(rectLight2);
-    
-
-    scene.add(rectLight3);
-
-    //PointLightHelper
-    // const lightHelper1 = new RectAreaLightHelper(rectLight1);
-    // scene.add(lightHelper1);
-
 })
 
 
@@ -111,7 +98,7 @@ const tick = () => {
 
     // 更新角度
     round += 0.005;
-
+    
     // 计算新的 x 和 z 坐标
     const x = 50 * Math.cos(-round);
     const z = 50 * Math.sin(-round);
