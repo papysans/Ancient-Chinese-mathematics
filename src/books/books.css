@@ -57,13 +57,12 @@ section {
   top: 20%;
   left: 8%;
   font-family: "HarmonyOS_Sans_SC_Bold";
-  /* font-family: "Kalam", cursive; */
   font-size: 6rem;
   color: #fff;
   transition-delay: 2s;
 }
 
-/* ----------- */
+
 /* BOX STYLES */
 
 .box-container {
@@ -185,9 +184,7 @@ section {
   color: #2e2e2f;
 }
 
-/* ---------------- */
 /* SLIDE ANIMATION */
-
 .swiper-slide-active [data-animate] {
   opacity: 1;
   transform: none;
@@ -219,9 +216,7 @@ section {
 }
 
 
-/* ------- */
 /* SIDEBAR */
-
 body.prevent-background-scroll {
   min-height: 100dvh;
   overflow-y: hidden;
@@ -293,9 +288,7 @@ body.prevent-background-scroll {
   color: #efefef;
 }
 
-/* ------------------------ */
 /* SIDEBAR - BIO CONTAINER */
-
 .sidebar-body {
   display: flex;
   flex-direction: column;
@@ -321,9 +314,7 @@ body.prevent-background-scroll {
 }
 
 
-/* ---------- */
 /* SCROLLBAR */
-
 .sidebar-body::-webkit-scrollbar,
 .song-list-body::-webkit-scrollbar {
   width: 0.7rem;

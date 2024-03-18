@@ -13,7 +13,6 @@ var swiper = new Swiper(".swiper", {
 swiper.enable();
 
 // Sidebars
-
 const moreBtns = document.querySelectorAll(".more-btn");
 const closeBtns = document.querySelectorAll(".close-btn");
 const boxContainers = document.querySelectorAll(".box-container");
