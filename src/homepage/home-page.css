@@ -242,8 +242,8 @@ input[id="radio-5"]:checked~.glider {
   position: relative;
   display: inline-block;
   z-index: 5;
-  top: 89vh;
-  height: 55px;
+  top: 91vh;
+  height: 40px;
   animation: moveUpDown 1s linear infinite;
 }
 
