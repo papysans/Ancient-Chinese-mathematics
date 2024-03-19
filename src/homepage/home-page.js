@@ -44,15 +44,19 @@ updateScale();
 
 let isAnimating = false;
 
-$(document).ready(function() {
-    $('.drop-down').click(function() {
+$(document).ready(function () {
+    $(".drop-down").click(function () {
         isAnimating = true;
-        $('html, body').animate({
-            scrollTop: $(window).height()
-        }, 800, function() {
-            // 动画完成后，再次启用滚动事件监听器
-            isAnimating = false;
-        });
+        $("html, body").animate(
+            {
+                scrollTop: $(window).height() * 1.2,
+            },
+            1000,
+            function () {
+                // 动画完成后，再次启用滚动事件监听器
+                isAnimating = false;
+            }
+        );
     });
 });
 
