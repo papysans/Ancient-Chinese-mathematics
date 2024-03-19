@@ -1,110 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>中国古代数学</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>中国古代数学</title>
+        <script src="./src/public/reference/three.min.js"></script>
+        <script src="./src/public/reference/jquery.min.js"></script>
+        <script src="./src/public/reference/GLTFLoader.js"></script>
+        <script src="./src/public/reference/OrbitControls.js"></script>
+        <script src="./src/public/reference/RectAreaLightUniformsLib.js"></script>
+        <script src="./src/public/reference/particles.min.js"></script>
+        <!-- <script type="module" src="./src/public/reference/RectAreaLightHelper.js"></script> -->
+        <!-- <script src="./src/public/reference/stats.min.js"></script> -->
 
-    <!-- <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
-    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://unpkg.com/three@0.126.0/examples/js/lights/RectAreaLightUniformsLib.js"></script>-->
-    <!-- <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>  -->
-    <!-- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
+        <link rel="stylesheet" href="./src/homepage/home-page.css" />
+        <link rel="stylesheet" href="./src/homepage/footer.css" />
+        <link rel="stylesheet" href="./src/public/loading.css" />
+        <link rel="stylesheet" href="./src/timeline/timeline.css" />
+        <link rel="stylesheet" href="./src/public/menu.css" />
+        <link rel="stylesheet" href="./src/public/background.css" />
+        <link rel="stylesheet" href="./src/public/font.css" />
+        <link rel="stylesheet" href="./src/public/background-index.css" />
 
-    <script src="./src/public/reference/three.min.js"></script>
-    <script src="./src/public/reference/jquery.min.js"></script>
-    <script src="./src/public/reference/GLTFLoader.js"></script>
-    <script src="./src/public/reference/OrbitControls.js"></script>
-    <script src="./src/public/reference/RectAreaLightUniformsLib.js"></script>
-    <script src="./src/public/reference/particles.min.js"></script>
-    <!-- <script type="module" src="./src/public/reference/RectAreaLightHelper.js"></script> -->
-    <!-- <script src="./src/public/reference/stats.min.js"></script> -->
+        <script type="module" src="./src/homepage/home-page.js"></script>
+        <script
+            type="text/javascript"
+            src="./src/timeline/timelineData.js"
+        ></script>
+        <!-- <script type="module" id="model-script" src="./src/homepage/model-1.js"></script> -->
+        <!-- <script type="module" id="model-script" src="./src/homepage/model-2.js"></script> -->
+        <!-- <script type="module" id="model-script" src="./src/homepage/model-3.js"></script> -->
+        <!-- <script type="module" id="model-script" src="./src/homepage/model-4.js"></script> -->
+        <!-- <script type="module" id="model-script" src="./src/homepage/model-5.js"></script> -->
 
-    <link rel="stylesheet" href="./src/homepage/home-page.css" />
-    <link rel="stylesheet" href="./src/homepage/footer.css" />
-    <link rel="stylesheet" href="./src/public/loading.css">
-    <link rel="stylesheet" href="./src/timeline/timeline.css" />
-    <link rel="stylesheet" href="./src/public/menu.css" />
-    <link rel="stylesheet" href="./src/public/background.css">
-    <link rel="stylesheet" href="./src/public/font.css">
-    <link rel="stylesheet" href="./src/public/background-index.css">
+        <script
+            type="text/javascript"
+            src="./src/homepage/hide-text.js"
+        ></script>
+        <!-- <script type="text/javascript" src="./src/homepage/model-load.js"></script> -->
+        <script
+            type="text/javascript"
+            src="./src/homepage/changeModel.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="./src/timeline/timeline.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="./src/public/background.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="./src/homepage/hide-text.js"
+        ></script>
+    </head>
 
-    <script type="module" src="./src/homepage/home-page.js"></script>
-    <script type="text/javascript" src="./src/timeline/timelineData.js"></script>
-    <!-- <script type="module" id="model-script" src="./src/homepage/model-1.js"></script> -->
-    <!-- <script type="module" id="model-script" src="./src/homepage/model-2.js"></script> -->
-    <!-- <script type="module" id="model-script" src="./src/homepage/model-3.js"></script> -->
-    <!-- <script type="module" id="model-script" src="./src/homepage/model-4.js"></script> -->
-    <!-- <script type="module" id="model-script" src="./src/homepage/model-5.js"></script> -->
-
-    <script type="text/javascript" src="./src/homepage/hide-text.js"></script>
-    <!-- <script type="text/javascript" src="./src/homepage/model-load.js"></script> -->
-    <script type="text/javascript" src="./src/homepage/changeModel.js"></script>
-    <script type="text/javascript" src="./src/timeline/timeline.js"></script>
-    <script type="text/javascript" src="./src/public/background.js"></script>
-    <script type="text/javascript" src="./src/homepage/hide-text.js"></script>
-
-</head>
-
-<body>
-    <!-- loading part -->
-    <div class="loading">
-        <div id="load">
-            <div>3</div>
-            <div>.</div>
-            <div>1</div>
-            <div>4</div>
-            <div>1</div>
-            <div>5</div>
-            <div>9</div>
-            <div>2</div>
-            <div>6</div>
-        </div>
-    </div>
-
-    <!-- menu part -->
-    <div class="menu">
-        <li class="active"><a onclick="loading.in('/index.html')">千秋岁月</a></li>
-        <li><a onclick="loading.in('./src/tools/Abacus/Abacus.html')">天工开物</a></li>
-        <li><a onclick="loading.in('./src/books/books.html')">璇玑藏书</a></li>
-        <li><a onclick="loading.in('./src/mathematicians/mathematicians.html')">名人志士</a></li>
-        <li><a onclick="loading.in('./src/about/about.html')">千里之行</a></li>
-    </div>
-
-    <!-- canvas part -->
-    <div class="headline-container">
-        <div class="headline-background"></div>
-        <div id="text-behind">中国古代数学<br />Ancient Chinese Mathematics</div>
-        <div id="text-behind-blur">中国古代数学<br />Ancient Chinese Mathematics</div>
-        <div id="text-front">中国古代数学<br />Ancient Chinese Mathematics</div>
-    </div>
-    <canvas id="canvas" class="webgl canvas-container"></canvas>
-    <div class="fkbuttons">
-        <div class="container">
-            <div class="tabs">
-                <input type="radio" id="radio-1" name="tabs" checked />
-                <label class="tab" for="radio-1">新莽铜卡尺</label>
-                <input type="radio" id="radio-2" name="tabs" />
-                <label class="tab" for="radio-2">明朝十三挡算盘</label>
-                <input type="radio" id="radio-3" name="tabs" />
-                <label class="tab" for="radio-3">弹簧圆规</label>
-                <input type="radio" id="radio-4" name="tabs" />
-                <label class="tab" for="radio-4" >秦度量衡</label>
-                <input type="radio" id="radio-5" name="tabs" />
-                <label class="tab" for="radio-5" >秦称</label>
-                <span class="glider"></span>
+    <body>
+        <!-- loading part -->
+        <div class="loading">
+            <div id="load">
+                <div>3</div>
+                <div>.</div>
+                <div>1</div>
+                <div>4</div>
+                <div>1</div>
+                <div>5</div>
+                <div>9</div>
+                <div>2</div>
+                <div>6</div>
             </div>
         </div>
-        <button id="change-button" onclick="changeColor()">隐藏文字</button>
-    </div>
 
-    <!-- timeline part -->
-    <div class="main-content">
-        <div class="timeline-container" id="timeline-1">
-            <!--
+        <!-- menu part -->
+        <div class="menu">
+            <li class="active">
+                <a onclick="loading.in('/index.html')">千秋岁月</a>
+            </li>
+            <li>
+                <a onclick="loading.in('./src/tools/Abacus/Abacus.html')"
+                    >天工开物</a
+                >
+            </li>
+            <li>
+                <a onclick="loading.in('./src/books/books.html')">璇玑藏书</a>
+            </li>
+            <li>
+                <a
+                    onclick="loading.in('./src/mathematicians/mathematicians.html')"
+                    >名人志士</a
+                >
+            </li>
+            <li>
+                <a onclick="loading.in('./src/about/about.html')">千里之行</a>
+            </li>
+        </div>
+
+        <!-- canvas part -->
+        <div class="headline-container">
+            <div class="headline-background"></div>
+            <div id="text-behind">
+                中国古代数学<br />Ancient Chinese Mathematics
+            </div>
+            <div id="text-behind-blur">
+                中国古代数学<br />Ancient Chinese Mathematics
+            </div>
+            <div id="text-front">
+                中国古代数学<br />Ancient Chinese Mathematics
+            </div>
+        </div>
+        <canvas id="canvas" class="webgl canvas-container"></canvas>
+        <div class="fkbuttons">
+            <div class="container">
+                <div class="tabs">
+                    <input type="radio" id="radio-1" name="tabs" checked />
+                    <label class="tab" for="radio-1">新莽铜卡尺</label>
+                    <input type="radio" id="radio-2" name="tabs" />
+                    <label class="tab" for="radio-2">明朝十三挡算盘</label>
+                    <input type="radio" id="radio-3" name="tabs" />
+                    <label class="tab" for="radio-3">弹簧圆规</label>
+                    <input type="radio" id="radio-4" name="tabs" />
+                    <label class="tab" for="radio-4">秦度量衡</label>
+                    <input type="radio" id="radio-5" name="tabs" />
+                    <label class="tab" for="radio-5">秦称</label>
+                    <span class="glider"></span>
+                </div>
+            </div>
+            <button id="change-button" onclick="changeColor()">隐藏文字</button>
+        </div>
+        <img class="drop-down" src="./image/timeline/下拉.svg" alt="" />
+
+        <!-- timeline part -->
+        <div class="main-content">
+            <div class="timeline-container" id="timeline-1">
+                <!--
             <div class="timeline" id="timelineData">
                 <div class="timeline-item" data-text="4000 AC">
                     <div class="timeline__content">
@@ -461,154 +491,179 @@
                     未来的故事还在继续...
                 </div>
             </div>
-            -->
+            --></div>
         </div>
-    </div>
-    <!-- footer part -->
-    <div>
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#fae2a14a" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#fae2a17a" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="#fae2a19a" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fae2a1ae" />
-            </g>
-        </svg>
-    </div>
-    <div class="content flex-p wave-p">
-        <p class="wave-p"> Design by Napstablook </p>
-    </div>
+        <!-- footer part -->
+        <div>
+            <svg
+                class="waves"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28"
+                preserveAspectRatio="none"
+                shape-rendering="auto"
+            >
+                <defs>
+                    <path
+                        id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                    />
+                </defs>
+                <g class="parallax">
+                    <use
+                        xlink:href="#gentle-wave"
+                        x="48"
+                        y="0"
+                        fill="#fae2a14a"
+                    />
+                    <use
+                        xlink:href="#gentle-wave"
+                        x="48"
+                        y="3"
+                        fill="#fae2a17a"
+                    />
+                    <use
+                        xlink:href="#gentle-wave"
+                        x="48"
+                        y="5"
+                        fill="#fae2a19a"
+                    />
+                    <use
+                        xlink:href="#gentle-wave"
+                        x="48"
+                        y="7"
+                        fill="#fae2a1ae"
+                    />
+                </g>
+            </svg>
+        </div>
+        <div class="content flex-p wave-p">
+            <p class="wave-p">Design by Napstablook</p>
+        </div>
 
-    <!-- bobble part -->
-    <div class="bottom">
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">0</div>
-    </div>
+        <!-- bobble part -->
+        <div class="bottom">
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+            <div class="number">6</div>
+            <div class="number">7</div>
+            <div class="number">8</div>
+            <div class="number">9</div>
+            <div class="number">0</div>
+        </div>
 
-    <!-- background part -->
-    <div id="particles-js"></div>
+        <!-- background part -->
+        <div id="particles-js"></div>
+    </body>
 
-</body>
-
-<script>
-    const loading = {
-        container: document.querySelector(".loading"),
-        in(target) {
-            this.container.classList.remove("loading_out");
-            setTimeout(() => {
-                window.location.href = target;
-            }, 1500)
-        },
-        out() {
-            this.container.classList.add("loading_out");
-        }
-    };
-    window.addEventListener("load", () => {
-        loading.out();
-    })
-
-</script>
-
+    <script>
+        const loading = {
+            container: document.querySelector(".loading"),
+            in(target) {
+                this.container.classList.remove("loading_out");
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 1500);
+            },
+            out() {
+                this.container.classList.add("loading_out");
+            },
+        };
+        window.addEventListener("load", () => {
+            loading.out();
+        });
+    </script>
 </html>

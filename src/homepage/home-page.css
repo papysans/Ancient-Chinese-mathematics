@@ -237,3 +237,21 @@ input[id="radio-5"]:checked~.glider {
     transform: scale(0.6);
   }
 }
+
+.drop-down {
+  position: relative;
+  display: inline-block;
+  z-index: 5;
+  top: 89vh;
+  height: 55px;
+  animation: moveUpDown 1s linear infinite;
+}
+
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
