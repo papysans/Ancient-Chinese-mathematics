@@ -1,10 +1,10 @@
 # Details
 
-Date : 2024-03-01 21:07:18
+Date : 2024-03-19 10:12:12
 
 Directory d:\\For Study\\Ancient-Chinese-mathematics
 
-Total : 59 files,  14193 codes, 1205 comments, 2752 blanks, all 18150 lines
+Total : 58 files,  14108 codes, 1167 comments, 2720 blanks, all 17995 lines
 
 [Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
@@ -20,21 +20,20 @@ Total : 59 files,  14193 codes, 1205 comments, 2752 blanks, all 18150 lines
 | [src/about/about.css](/src/about/about.css) | CSS | 191 | 7 | 11 | 209 |
 | [src/about/about.html](/src/about/about.html) | HTML | 131 | 2 | 9 | 142 |
 | [src/about/about.js](/src/about/about.js) | JavaScript | 10 | 0 | 0 | 10 |
-| [src/books/books.css](/src/books/books.css) | CSS | 380 | 12 | 73 | 465 |
-| [src/books/books.html](/src/books/books.html) | HTML | 1,082 | 12 | 51 | 1,145 |
-| [src/books/books.js](/src/books/books.js) | JavaScript | 55 | 1 | 9 | 65 |
+| [src/books/books.css](/src/books/books.css) | CSS | 380 | 6 | 70 | 456 |
+| [src/books/books.html](/src/books/books.html) | HTML | 1,078 | 16 | 51 | 1,145 |
+| [src/books/books.js](/src/books/books.js) | JavaScript | 55 | 1 | 8 | 64 |
 | [src/homepage/changeModel.js](/src/homepage/changeModel.js) | JavaScript | 45 | 0 | 3 | 48 |
 | [src/homepage/footer.css](/src/homepage/footer.css) | CSS | 602 | 3 | 9 | 614 |
 | [src/homepage/hide-text.js](/src/homepage/hide-text.js) | JavaScript | 29 | 0 | 3 | 32 |
 | [src/homepage/home-page.css](/src/homepage/home-page.css) | CSS | 199 | 7 | 33 | 239 |
-| [src/homepage/home-page.js](/src/homepage/home-page.js) | JavaScript | 34 | 22 | 12 | 68 |
-| [src/homepage/model-1.js](/src/homepage/model-1.js) | JavaScript | 83 | 11 | 24 | 118 |
+| [src/homepage/home-page.js](/src/homepage/home-page.js) | JavaScript | 34 | 0 | 10 | 44 |
+| [src/homepage/model-1.js](/src/homepage/model-1.js) | JavaScript | 81 | 13 | 24 | 118 |
 | [src/homepage/model-2.js](/src/homepage/model-2.js) | JavaScript | 67 | 26 | 18 | 111 |
 | [src/homepage/model-3.js](/src/homepage/model-3.js) | JavaScript | 62 | 20 | 17 | 99 |
 | [src/homepage/model-4.js](/src/homepage/model-4.js) | JavaScript | 65 | 24 | 17 | 106 |
 | [src/homepage/model-5.js](/src/homepage/model-5.js) | JavaScript | 63 | 24 | 16 | 103 |
 | [src/homepage/model-load.js](/src/homepage/model-load.js) | JavaScript | 22 | 2 | 2 | 26 |
-| [src/homepage/model.js](/src/homepage/model.js) | JavaScript | 79 | 16 | 26 | 121 |
 | [src/mathematicians/mathematicians.css](/src/mathematicians/mathematicians.css) | CSS | 25 | 0 | 4 | 29 |
 | [src/mathematicians/mathematicians.html](/src/mathematicians/mathematicians.html) | HTML | 61 | 1 | 5 | 67 |
 | [src/public/background-index.css](/src/public/background-index.css) | CSS | 8 | 0 | 1 | 9 |
